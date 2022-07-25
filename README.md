@@ -1,6 +1,6 @@
 # MentalreBalance
 
-This is my humble attempt at creating a new, hopefully balanced, titanfall 2 meta, where each gun is worth using, being effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly al possible situations, nor be equally skilled with every gun.
+This is my humble attempt at creating a new, hopefully balanced, titanfall 2 meta, where each gun is worth using, being effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possibly ever test my changes in truly all conceivable situations, nor be equally skilled with every gun.
 
 The wierdness can be done away with, simply by installing the mod client-side, as well.
 
