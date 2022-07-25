@@ -12,14 +12,14 @@ The server side only config exhibits client/server conflicts with guns that have
 ### Sidearms
 
     P2016
-    - Fire rate increased 8 > 9
+    - Fire rate increased 8 > 9 (buff)
 
     R45
     - Damage reduced 20 > 20 / 13 > 10
     - Damage falloff increased 750 > 500 / 1000 > 660
 
     Wingman B3
-    - Increased fire rate 2.6 > 2.9
+    - Increased fire rate 2.6 > 2.9 (buff)
     - Increased spread decay (buff)
 
 ### Assault Rifles
@@ -73,7 +73,7 @@ The server side only config exhibits client/server conflicts with guns that have
     Volt
     - Clip size reduced 33 > 30 / 40 > 36
     - Damage reduced 4 hit > 5 hit / 25 > 22 / 15 > 14 / 12 > 10
-    - Recoil reduced by ≈8%
+    - Recoil reduced by ≈8% (buff)
 
     R-97
     - Damage reduced 4 hit > 5 hit / 20 > 17 / 12 > 10 / 10 > 9
@@ -91,18 +91,18 @@ The server side only config exhibits client/server conflicts with guns that have
 
     L-STAR
     - Overheats a bit more easily
-    - Cooling speed increased
+    - Cooling speed increased (buff)
 
     Devotion
     - Damage changed 25 > 30 / 20 > 16 / 15 > 8
     - Damage falloff moved up 1500 > 1000 / 1800 > 1500
-    - Spin up time reduced 1.75s > 1.5s
+    - Spin up time reduced 1.75s > 1.5s (buff)
 
 ### Shotguns
 
     EVA-8
     - Damage reduced 200 > 160 / 10 > 10
-    - Spread reduced 8 > 6
+    - Spread reduced 8 > 6 (buff)
 
     Mastiff
     - Unchanged
@@ -134,7 +134,7 @@ The server side only config exhibits client/server conflicts with guns that have
 
     Double Take
     - Clip size reduced 6 > 5 / 8 > 7
-    - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40
+    - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)
     - Damage falloff inverted 4500 > 700 / 15000 > 1000
     - Hipfire accuracy slightly increased by ≈25% (buff)
 
@@ -156,19 +156,19 @@ The server side only config exhibits client/server conflicts with guns that have
 
     Charge Rifle
     - Ammo stash reduced 20 > 10 / 25 > 14
-    - Titan damage increased 1025 > 1425 / 725 > 1125
+    - Titan damage increased 1025 > 1425 / 725 > 1125 (buff)
     - Damage falloff moved up 4800 > 1500 / 5300 > 2200
     - Cooldown down speed increased 1.0 > 0.2
     - Rate of fire reduced 1 > 0.6
-    - Titan weak spot crits introduced (1.25 multiplier)
+    - Titan weak spot crits introduced (1.25 multiplier) (buff)
 
     MGL
     - Unchanged
 
     Thunderbolt
-    - Ammo stash increased 6 > 8 / 9 > 12
+    - Ammo stash increased 6 > 8 / 9 > 12 (buff)
     - Reload time increased by 20%
-    - Pilot damage increased 70 > 120
+    - Pilot damage increased 70 > 120  (buff)
 
     Archer
     - Unchanged
