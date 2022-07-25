@@ -4,7 +4,7 @@ This is my humble attempt at creating a new, hopefully balanced, titanfall 2 met
 
 The wierdness can be done away with, simply by installing the mod client-side, as well.
 
-The server side only config exhibits client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hifire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle.
+The server side only config exhibits client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle.
 
 ## Changes
 
