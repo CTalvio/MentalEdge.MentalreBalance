@@ -1,0 +1,7 @@
+{
+   "Name": "MentalEdge.MentalreBalance",
+   "Description": "Various weapon rebalances",
+   "LoadPriority": 5,
+   "RequiredOnClient": false,
+   "Version": "1.0.0",
+}
