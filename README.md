@@ -1,10 +1,14 @@
 # MentalreBalance
 
-This is my humble attempt at creating a new, hopefully balanced, titanfall 2 meta, where each gun is worth using, being effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possibly ever test my changes in truly all conceivable situations, nor be equally skilled with every gun.
 
-The wierdness can be done away with, simply by installing the mod client-side, as well.
+This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using, making them all more equally effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly al possible situations, nor be equally skilled with every gun.
 
-The server side only config exhibits client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle.
+If you'd like to avoid the client-side glitches, simply install the mod client-side, as well.
+
+The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hifire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle. However, the issues are visual only.
+
+If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
+
 
 ## Changes
 
@@ -37,7 +41,7 @@ The server side only config exhibits client/server conflicts with guns that have
     - Headshot multiplier increased 1.5 > 2.0 (buff)
     - Recoil and ADS inaccuracy introduced
     - Fire rate increased (burst delay) 0.25s > 0.22s (buff)
-    - Spread decay increased 4 > 5
+    - Spread decay increased 4 > 5 (buff)
 
     G2
     - Damage reduced 40 > 40 / 35 > 30
