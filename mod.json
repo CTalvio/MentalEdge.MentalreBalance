@@ -1,7 +1,16 @@
 {
    "Name": "MentalEdge.MentalreBalance",
-   "Description": "Various weapon rebalances",
+   "Description": "Weapons rebalance, currently modifies all primary pilot weapons, anti-titan weapons and sidearms.",
    "LoadPriority": 5,
    "RequiredOnClient": false,
-   "Version": "1.0.0",
+   "Version": "1.1.0",
+   "Scripts": [
+      {
+         "Path": "guntips.nut",
+         "RunOn": "( SERVER ) && MP",
+         "ServerCallback": {
+            "After": "GunTipsInit"
+         }
+      }
+   ]
 }

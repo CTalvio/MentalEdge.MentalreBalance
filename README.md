@@ -1,13 +1,18 @@
 # MentalreBalance
 
 
-This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using, making them all more equally effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly al possible situations, nor be equally skilled with every gun.
+This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using, making them all more equally effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
 
 If you'd like to avoid the client-side glitches, simply install the mod client-side, as well.
 
 The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hifire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle. However, the issues are visual only.
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
+
+### 1.1.0
+
+- The mod now contextually tells players about changes to the particular guns they are using
+- Fixed folder layout
 
 
 ## Changes
@@ -136,7 +141,7 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     Kraber
     - Unchanged
 
-    Double Take
+    Doubletake
     - Clip size reduced 6 > 5 / 8 > 7
     - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)
     - Damage falloff inverted 4500 > 700 / 15000 > 1000
