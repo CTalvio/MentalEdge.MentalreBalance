@@ -1,45 +1,6 @@
 WeaponData
 {
 
-	// Bolt info
-	"bolt_hitsize"									"0.0"
-	"bolt_hitsize_grow1_time"						"0.035"
-	"bolt_hitsize_grow1_size"						"1.25.0"//1.25"//8.5"//7.5"//10.0"
-	"bolt_hitsize_grow2_time"						"0.08"
-	"bolt_hitsize_grow2_size"						"2.0"//2.5"//17.0"//15.0"//20.0"
-	"bolt_hitsize_growfinal_lerptime"				"0.18"
-	"bolt_hitsize_growfinal_size"					"2.0"//2.5"//17.0"//15.0"//20.0"
-
-	"bolt_gravity_enabled"							"1"
-	"bolt_gravity_amount"							"0.09"
-
-	"bolt_bounce_frac"								"0.000"
-	"projectile_damage_reduction_per_bounce"		"0.0"
-	"projectile_damages_owner"						"0"
-	"projectile_ricochet_max_count"					"0"
-
-	"bolt_speed"									"10000"//12000"
-
-	"bolt_spread_max"								"0.015"//0.030"//0.05"
-	"bolt_spread_min"								"0.015"//0.030"//0.025"
-
-	"damage_flags"									"DF_BULLET | DF_KNOCK_BACK | DF_DISMEMBERMENT"
-
-	"damage_type" 									"bullet"
-	"damage_headshot_scale"							"2.0"
-
-	"impulse_force"   								"2500"
-
-	// Ammo **NOTE** Weapon consumes two bullets per shot!
-	"ammo_clip_size"   								"10"
-	"ammo_per_shot"									"2"
-
-	"titanarmor_critical_hit_required"              "1"
-	"critical_hit"									"1"
-
-	"ammo_min_to_fire"								"2"
-	"ammo_clip_random_loss_on_npc_drop_chunksize"	"2"
-
 	MP_BASE
 	{
 		"ammo_default_total"							"120"

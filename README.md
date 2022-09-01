@@ -1,15 +1,25 @@
 # MentalreBalance
 
 
-This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using, making them all more equally effective when wielded with skill, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
+This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using without noticably increasing the quick and intense TTK of titanfall, instead giving each gun strenghts and weaknesses making none a jack of all trades. Making any one gun more equally effective when wielded with skill and situational awareness, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
 
 If you'd like to avoid the client-side glitches, simply install the mod client-side, as well.
 
-The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hifire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle. However, the issues are visual only.
+The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle. However, the issues are visual only.
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
 
-### 1.1.0
+#### 1.1.2
+
+- Bugfix
+
+#### 1.1.1
+
+- Now modifies ordnance
+- Eva-8 changes
+- MGL changes
+
+#### 1.1.0
 
 - The mod now contextually tells players about changes to the particular guns they are using
 - Fixed folder layout
@@ -17,6 +27,26 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 
 ## Changes
 
+### Ordnance
+
+    Frag Grenade
+    - Unchanged
+
+    Arc Grenade
+    - Activates quicker 0.75s > 0.2s
+
+    Gravity Star
+    - Unchanged
+
+    Fire Star
+    - Unchanged
+
+    Electric Smoke
+    - Damage increased
+    - Effective radius increased
+
+    Satchel
+    - Larger splash radius 120 > 200 / 250 > 250
 
 ### Sidearms
 
@@ -111,7 +141,8 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 
     EVA-8
     - Damage reduced 200 > 160 / 10 > 10
-    - Spread reduced 8 > 6 (buff)
+    - Max range increased 750 > 900
+    - Added angle based damage boost/penalty
 
     Mastiff
     - Unchanged
@@ -172,7 +203,7 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Titan weak spot crits introduced (1.25 multiplier) (buff)
 
     MGL
-    - Unchanged
+    - Pilot damage increased 40 > 60 / 30 > 40
 
     Thunderbolt
     - Ammo stash increased 6 > 8 / 9 > 12 (buff)

@@ -1,0 +1,130 @@
+WeaponData
+{
+	"explosion_inner_radius"  						"80"
+	"explosionradius" 								"160"
+	MP_BASE
+	{
+		"ammo_default_total"							"35"
+		"ammo_stockpile_max"							"35"
+	}
+	Mods
+	{
+		extended_ammo
+		{
+			"ammo_clip_size"   					"8"
+			"ammo_stockpile_max"						"40"
+			"ammo_default_total"						"40"
+		}
+		pro_screen
+		{
+			"ui8_enable"		"1"
+			"bodygroup1_set"				"0"
+			"bodygroup6_set"				"1"
+		}
+
+		pas_fast_reload
+		{
+			"reload_time"								"*0.7"
+			"reload_time_late1"							"*0.7"
+			"reloadempty_time"							"*0.7"
+			"reloadempty_time_late1"					"*0.7"
+		}
+		burn_mod_mgl
+		{
+			"is_burn_mod"		"1"
+
+			"damage_near_value"   							"50"
+			"damage_far_value"								"50"
+			"damage_near_value_titanarmor"					"480"
+			"damage_far_value_titanarmor" 					"480"
+			"explosion_damage"								"45"
+			"explosion_damage_heavy_armor"					"125"
+
+			"projectile_trail_effect_0" 					"wpn_grenade_frag_mag_burn"
+			"fx_muzzle_flash_view"							"P_wpn_muzzleflash_mgl_FP_burn"
+			"fx_muzzle_flash_world"							"P_wpn_muzzleflash_mgl_burn"
+			"fx_muzzle_flash_attach"						"muzzle_flash"
+
+		}
+
+		ar_trajectory
+		{
+            "grenade_arc_indicator_effect"					"P_grenade_arc_proto"
+            "grenade_arc_impact_indicator_effect"			"grenade_arc_impact_proto"
+            "grenade_arc_indicator_show_from_hip"			"1"
+   			"grenade_arc_indicator_bounce_count"			"2"
+		}
+		pas_fast_ads
+		{
+			//Fast ADS
+			"zoom_time_in"									"*0.5"
+			"zoom_time_out"   								"*0.6"
+		}
+		pas_fast_swap
+		{
+			//Fast Swap
+			"fast_swap_to"									"1"
+		}
+		tactical_cdr_on_kill
+		{
+
+		}
+		pas_run_and_gun
+		{
+			"primary_fire_does_not_block_sprint"			"1"
+			"crosshair_force_sprint_fade_disabled"          "1"
+		}
+		at_unlimited_ammo
+        {
+            "ammo_no_remove_from_stockpile"					"1"
+        }
+	}
+
+	"ui1_enable"		"1"
+	UiData1
+	{
+		"ui"								"ui/mgl_sights"
+		"mesh"						"models/weapons/attachments/mgl_rui_upper"
+		Args
+		{
+			vis							player_zoomfrac
+		}
+	}
+
+	"ui8_enable"		"0"
+	UiData8
+	{
+		"ui"									"ui/pro_screen_panel"
+		"mesh"							"models/weapons/attachments/pro_screen_rui_upper"
+		Args
+		{
+			proValue							proscreen_int0
+			proOwnedByPlayer			proscreen_owner_is_player
+		}
+	}
+
+	RUI_CrosshairData
+	{
+		DefaultArgs
+		{
+			adjustedSpread				weapon_spread
+			adsFrac 					player_zoomFrac
+			isSprinting					player_is_sprinting
+			isReloading					weapon_is_reloading
+			teamColor					crosshair_team_color
+			isAmped						weapon_is_amped
+		    crosshairMovementX          crosshair_movement_x
+		    crosshairMovementY          crosshair_movement_y
+		}
+
+		Crosshair_1
+		{
+			"ui"						"ui/crosshair_grenade_launcher"
+			"base_spread"				"1.0"
+			Args
+			{
+				isFiring				weapon_is_firing
+			}
+		}
+	}
+}

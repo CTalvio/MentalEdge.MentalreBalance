@@ -20,23 +20,23 @@ WeaponData
 		"damage_far_value_titanarmor" 					"10"
 		"damage_rodeo" 									"550"
 		"damage_near_distance"							"80"
-		"damage_far_distance" 							"750"
+		"damage_far_distance" 							"900"
 
 		"damage_headshot_scale"							"1.25"
 
 		"red_crosshair_range" 							"750"
 
 		// Spread
-		"spread_stand_hip"								"6"
-		"spread_stand_hip_run"							"6"
-		"spread_stand_hip_sprint"                       "6"
-		"spread_crouch_hip"   							"6"
-		"spread_air_hip"  								"6"
-		"spread_stand_ads"								"6"
-		"spread_crouch_ads"   							"6"
-		"spread_air_ads"  								"6"
-		"spread_wallrunning"  							"6"
-		"spread_wallhanging"  							"6"
+		"spread_stand_hip"								"7"
+		"spread_stand_hip_run"							"7"
+		"spread_stand_hip_sprint"                       "7"
+		"spread_crouch_hip"   							"7"
+		"spread_air_hip"  								"7"
+		"spread_stand_ads"								"7"
+		"spread_crouch_ads"   							"7"
+		"spread_air_ads"  								"7"
+		"spread_wallrunning"  							"7"
+		"spread_wallhanging"  							"7"
 	}
 
 	// Behavior

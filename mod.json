@@ -3,7 +3,7 @@
    "Description": "Weapons rebalance, currently modifies all primary pilot weapons, anti-titan weapons and sidearms.",
    "LoadPriority": 5,
    "RequiredOnClient": false,
-   "Version": "1.1.0",
+   "Version": "1.1.1",
    "Scripts": [
       {
          "Path": "guntips.nut",

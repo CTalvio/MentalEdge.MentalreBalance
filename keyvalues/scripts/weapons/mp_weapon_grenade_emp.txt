@@ -1,0 +1,14 @@
+WeaponData
+{
+	MP_BASE
+	{
+		"explosion_damage"								"40"
+		"explosion_damage_heavy_armor"					"400"
+        "explosion_inner_radius"  						"75"
+        "explosionradius" 								"350"
+
+		"npc_explosion_damage"							"60"
+		"npc_explosion_damage_heavy_armor"				"350"
+		"grenade_ignition_time"                         "0.20"
+	}
+}
