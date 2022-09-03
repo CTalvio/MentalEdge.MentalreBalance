@@ -1,0 +1,20 @@
+WeaponData
+{
+
+	// Behavior
+	"fire_duration"									"4.0"
+
+	MP_BASE
+	{
+		"ammo_clip_size"   								"100"
+		"ammo_default_total"							"100"
+		"ammo_display"									"bar"
+		"ammo_min_to_fire"								"100"
+		"ammo_per_shot"									"100"
+		"ammo_stockpile_max"							"100"
+		"regen_ammo_refill_rate"						"7.5"
+		"regen_ammo_refill_start_delay"					"0.0"
+
+		"enable_highlight_networking_on_creation"		"<KEEP_DEFAULT>"
+	}
+}

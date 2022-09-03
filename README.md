@@ -9,6 +9,13 @@ The server side only issues are caused by client/server conflicts with guns that
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
 
+#### 1.1.3
+
+- Now modifies A-Wall and Phase
+- Now provides random good-to-know changes about guns other than those a player is using
+- Fixed two ways the mod would crash
+- The contextual/random tips can now be disabled/enabled with a convar
+
 #### 1.1.2
 
 - Bugfix
@@ -26,6 +33,17 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 
 
 ## Changes
+
+### Tacticals
+
+    A-Wall
+    - Deployment time reduced 15s > 4s
+    - Wall health reduced 1000 > 300
+    - Cooldown reduced 30s > 20s (buff)
+
+    Phase
+    - Cooldown increased 20s > 25s
+    - Phase duration increased 2s > 3.5s (buff)
 
 ### Ordnance
 
@@ -203,7 +221,8 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Titan weak spot crits introduced (1.25 multiplier) (buff)
 
     MGL
-    - Pilot damage increased 40 > 60 / 30 > 40
+    - Pilot damage increased 30 > 35 (buff)
+    - Splash radius increased 50 > 80 / 100 > 160
 
     Thunderbolt
     - Ammo stash increased 6 > 8 / 9 > 12 (buff)

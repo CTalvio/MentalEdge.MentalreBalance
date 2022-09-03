@@ -1,58 +1,77 @@
-
 global function GunTipsInit
 
+// TODO Add tacticals
 
 array<string> alreadySentTips = []
 
+array<string> goodToKnowList = [
+
+"The Hemlok no longer sucks, have at it!",
+"The damage falloff of all SMGs has been made more severe.",
+"The CAR has been nerfed overrall, but it actually does more headshot damage.",
+"Sidearms are now only barely weaker than main weapons.",
+"The EVA-8 fires no real bullets, damage is completely based on distance and angle.",
+"The Doubletake is now able to one-shot, but only from far enough.",
+"A-Wall only lasts 4 seconds and can take only 300 damage. But it can be used more often.",
+"The Thunderbolt can now one-hit pilots, step aside EPG!",
+"Some buffed weapons are the Doubletake, Mozambique and Hemlok.",
+"Some buffed weapons are the B3 Wingman, Devotion and Cold War.",
+"The buffed Ordnance are the Arc Grenade, Electric smoke and Satchel."
+
+]
+
 void function GunTipsInit(){
-    printl("[GUNTIPS] Working")
-    AddCallback_GameStateEnter( eGameState.Playing, Playing)
+    int guntTipsEnable = GetConVarInt( "rebalance_tips" )
+    if (guntTipsEnable == 1){
+        printl("[GUNTIPS] Working")
+        AddCallback_GameStateEnter( eGameState.Playing, Playing)
+    }
 }
 
 void function Playing(){
     AddCallback_OnPlayerRespawned(OnPlayerSpawned)
     foreach (entity player in GetPlayerArray()){
-        thread GunTipsThread(player, 20)
+        thread GunTipsThread(player, 20, 1)
     }
 }
 
 void function OnPlayerSpawned(entity player){
-    thread GunTipsThread(player, 2)
-    thread GunTipsThread(player, 20)
+    thread GunTipsThread(player, 2, 1)
+    thread GunTipsThread(player, 20, 2)
 }
 
+void function GunTipsThread(entity player, int waitTime, int iteration){
 
-//array<string> gunTipList = [
-
-//"Set off a satchel while not holding the detonator, by double tapping reload.",
-//"If a MENTAL server crashes or freezes, it should be back up in 50-70 seconds, restarts are automated."
-
-//  ]
-
-void function GunTipsThread(entity player, int waitTime){
     wait waitTime
+
+    if ( !IsValid(player) || !IsAlive(player) ){
+        return
+    }
+
     string weapon = "INFO:" + player.GetMainWeapons()[0] + player.GetMainWeapons()[1] + player.GetMainWeapons()[2]
-    string offhand = "INFO:" + player.GetOffhandWeapons()[0]
+    string offhand = "INFO:" + player.GetOffhandWeapons()[0] + player.GetOffhandWeapons()[1] + player.GetOffhandWeapons()[2]
     string messageString1 = ""
     string messageString2 = ""
     string messageString3 = ""
     string messageString4 = ""
+    string messageString5 = ""
     string weaponid1 = ""
     string weaponid2 = ""
     string weaponid3 = ""
     string offhandid1 = ""
+    string offhandid2 = ""
 
     //Sidearms
     if (weapon.find("wingman")){
-        messageString2 = "The B3 has an increased fire rate, and buffed spread decay."
+        messageString2 = "The B3 has an increased fire rate, as well as buffed spread decay"
         weaponid2 = "wingman"
     }
     if (weapon.find("semipistol")){
-        messageString2 = "The p2016 has a slightly increased rate of fire."
+        messageString2 = "The p2016 has a slightly increased rate of fire"
         weaponid2 = "semipistol"
     }
     if (weapon.find("autopistol")){
-        messageString2 = "The effective range of the R45 is reduced."
+        messageString2 = "The effective range of the R45 is reduced"
         weaponid2 = "autopistol"
     }
 
@@ -168,7 +187,7 @@ void function GunTipsThread(entity player, int waitTime){
         weaponid3 = "weapon_mgl"
     }
     if (weapon.find("weapon_arc_lau")){
-        messageString3 = "The Thunderbolt carries more ammo and it can one-hit pilots, reload takes longer."
+        messageString3 = "The Thunderbolt carries more ammo and it can one-hit pilots, reloading is slower."
         weaponid3 = "weapon_arc_lau"
     }
     if (weapon.find("weapon_rocket")){
@@ -178,66 +197,98 @@ void function GunTipsThread(entity player, int waitTime){
 
     //Ordnance
     if (offhand.find("weapon_frag_grenade")){
-        messageString4 = "The Frag Grenade is unchanged."
+        messageString4 = "Frag Grenade is unchanged."
         offhandid1 = "weapon_frag_grenade"
     }
     if (offhand.find("weapon_grenade_electric")){
-        messageString4 = "The Electric Smoke Grenade does more damage."
+        messageString4 = "Electric Smoke Grenade does more damage."
         offhandid1 = "weapon_grenade_electric"
     }
     if (offhand.find("weapon_grenade_emp")){
-        messageString4 = "The Arc Grenade activates sooner."
+        messageString4 = "Arc Grenade activates sooner."
         offhandid1 = "weapon_grenade_emp"
     }
     if (offhand.find("weapon_grenade_gravity")){
-        messageString4 = "The Gravity Star is unchanged."
+        messageString4 = "Gravity Star is unchanged."
         offhandid1 = "weapon_grenade_gravity"
     }
     if (offhand.find("weapon_thermite_grenade")){
-        messageString4 = "The Fire Star is unchanged."
+        messageString4 = "Fire Star is unchanged."
         offhandid1 = "weapon_thermite_grenade"
     }
     if (offhand.find("weapon_satchel")){
-        messageString4 = "The Satchel has a somewhat larger killradius."
+        messageString4 = "Satchel has a somewhat larger killradius."
         offhandid1 = "weapon_satchel"
     }
 
 
+    if (offhand.find("ability_shifter")){
+        messageString5 = "When phasing, you can now stay in the up-side-down for a little longer, the cooldown is longer."
+        offhandid2 = "ability_shifter"
+    }
+    if (offhand.find("deployable_cover")){
+        messageString5 = "Your A-Wall will only last a moment and can only take a moderate amount of fire, but you can use it more often."
+        offhandid2 = "deployable_cover"
+    }
+
+    if ( !IsValid(player) || !IsAlive(player) ){
+        return
+    }
+
+    // Send initial notification.
     if (alreadySentTips.find(player.GetPlayerName() + "INFO") == -1){
-        //NSSendInfoMessageToPlayer( player, "Guns on this server are rebalanced, equip different loadouts to get info on changes." )
-        Chat_ServerPrivateMessage( player, "Guns on this server are rebalanced, equip different loadouts to get info on changes.", false)
+        //NSSendInfoMessageToPlayer( player, "Pilot weapons on this server are rebalanced, equip different loadouts to get info on changes." )
+        Chat_ServerPrivateMessage( player, "Pilot weapons on this server are rebalanced, equip different loadouts to get info on changes.", false)
         alreadySentTips.append(player.GetPlayerName() + "INFO")
         wait 5
     }
+    else if (alreadySentTips.find(player.GetPlayerName() + "GOODTOKNOW") == -1){
+        //NSSendInfoMessageToPlayer( player, "Something good to know: " goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )])
+        Chat_ServerPrivateMessage( player, "Good to know: " + goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )], false)
+        alreadySentTips.append(player.GetPlayerName() + "GOODTOKNOW")
+        wait 5
+    }
 
+    if ( !IsValid(player) || !IsAlive(player) ){
+        return
+    }
+
+    // Send main weapon info, if that is sent, send tacitcal info
     if (alreadySentTips.find(player.GetPlayerName() + weaponid1) == -1){
         //NSSendInfoMessageToPlayer( player, messageString1 )
         Chat_ServerPrivateMessage( player, messageString1, false)
         alreadySentTips.append(player.GetPlayerName() + weaponid1)
+        wait 5
+    }
+    else if (alreadySentTips.find(player.GetPlayerName() + offhandid2) == -1 && messageString5 != "" && iteration == 1){
+        //NSSendInfoMessageToPlayer( player, messageString5 )
+        Chat_ServerPrivateMessage( player, messageString5, false)
+        alreadySentTips.append(player.GetPlayerName() + offhandid2)
+        wait 5
     }
 
-    wait 5
+    if ( !IsValid(player) || !IsAlive(player) ){
+        return
+    }
 
+    // Send ordnance and/or sidearm info, if that is sent, send AT weapon info
     if (alreadySentTips.find(player.GetPlayerName() + weaponid2) == -1 && alreadySentTips.find(player.GetPlayerName() + offhandid1) == -1){
         //NSSendInfoMessageToPlayer( player, messageString2 + " - " + messageString4 )
-        Chat_ServerPrivateMessage( player, messageString2 + " - " + messageString4, false)
+        Chat_ServerPrivateMessage( player, messageString2 + " and the " + messageString4, false)
         alreadySentTips.append(player.GetPlayerName() + weaponid2)
         alreadySentTips.append(player.GetPlayerName() + offhandid1)
     }
     else if (alreadySentTips.find(player.GetPlayerName() + weaponid2) == -1){
-        //NSSendInfoMessageToPlayer( player, messageString2 )
-        Chat_ServerPrivateMessage( player, messageString2, false)
+        //NSSendInfoMessageToPlayer( player, messageString2 + "." )
+        Chat_ServerPrivateMessage( player, messageString2 + "." , false)
         alreadySentTips.append(player.GetPlayerName() + weaponid2)
     }
     else if (alreadySentTips.find(player.GetPlayerName() + offhandid1) == -1){
         //NSSendInfoMessageToPlayer( player, messageString4 )
-        Chat_ServerPrivateMessage( player, messageString4, false)
+        Chat_ServerPrivateMessage( player, "The " + messageString4, false)
         alreadySentTips.append(player.GetPlayerName() + offhandid1)
     }
-
-    wait 5
-
-    if (alreadySentTips.find(player.GetPlayerName() + weaponid3) == -1){
+    else if (alreadySentTips.find(player.GetPlayerName() + weaponid3) == -1 && iteration == 1){
         //NSSendInfoMessageToPlayer( player, messageString3 )
         Chat_ServerPrivateMessage( player, messageString3, false)
         alreadySentTips.append(player.GetPlayerName() + weaponid3)
