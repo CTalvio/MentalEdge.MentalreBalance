@@ -1,7 +1,5 @@
 global function GunTipsInit
 
-// TODO Add tacticals
-
 array<string> alreadySentTips = []
 
 array<string> goodToKnowList = [
@@ -23,12 +21,12 @@ array<string> goodToKnowList = [
 void function GunTipsInit(){
     int guntTipsEnable = GetConVarInt( "rebalance_tips" )
     if (guntTipsEnable == 1){
-        printl("[GUNTIPS] Working")
         AddCallback_GameStateEnter( eGameState.Playing, Playing)
     }
 }
 
 void function Playing(){
+    printl("[REBALANCETIPS] Rebalance tips enabled")
     AddCallback_OnPlayerRespawned(OnPlayerSpawned)
     foreach (entity player in GetPlayerArray()){
         thread GunTipsThread(player, 20, 1)
@@ -36,6 +34,7 @@ void function Playing(){
 }
 
 void function OnPlayerSpawned(entity player){
+    printl("[REBALANCETIPS] Running on spawn")
     thread GunTipsThread(player, 2, 1)
     thread GunTipsThread(player, 20, 2)
 }
@@ -44,9 +43,12 @@ void function GunTipsThread(entity player, int waitTime, int iteration){
 
     wait waitTime
 
-    if ( !IsValid(player) || !IsAlive(player) ){
+    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() || player.GetMainWeapons().len() != 3 || player.GetOffhandWeapons().len() != 3 ) {
+        printl("[REBALANCETIPS] Interrupted, player no longer needs tips")
         return
     }
+
+    printl("[REBALANCETIPS] Checking loadout of " +  player.GetPlayerName() )
 
     string weapon = "INFO:" + player.GetMainWeapons()[0] + player.GetMainWeapons()[1] + player.GetMainWeapons()[2]
     string offhand = "INFO:" + player.GetOffhandWeapons()[0] + player.GetOffhandWeapons()[1] + player.GetOffhandWeapons()[2]
@@ -179,7 +181,7 @@ void function GunTipsThread(entity player, int waitTime, int iteration){
 
     //Anti-titan
     if (weapon.find("weapon_defender")){
-        messageString3 = "The charge rifle now loses its charge very quickly. But it does more damage and now benefits from critical hits."
+        messageString3 = "The charge rifle does more damage and now benefits from critical hits, but comes with less ammo."
         weaponid3 = "weapon_defender"
     }
     if (weapon.find("weapon_mgl")){
@@ -231,9 +233,12 @@ void function GunTipsThread(entity player, int waitTime, int iteration){
         offhandid2 = "deployable_cover"
     }
 
-    if ( !IsValid(player) || !IsAlive(player) ){
+    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() ){
+        printl("[REBALANCETIPS] Interrupted, player no longer needs tips")
         return
     }
+
+    printl("[REBALANCETIPS] Sending message one to " + player.GetPlayerName())
 
     // Send initial notification.
     if (alreadySentTips.find(player.GetPlayerName() + "INFO") == -1){
@@ -249,9 +254,12 @@ void function GunTipsThread(entity player, int waitTime, int iteration){
         wait 5
     }
 
-    if ( !IsValid(player) || !IsAlive(player) ){
+    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() ){
+        printl("[REBALANCETIPS] Interrupted, player no longer needs tips")
         return
     }
+
+    printl("[REBALANCETIPS] Sending message two to " + player.GetPlayerName())
 
     // Send main weapon info, if that is sent, send tacitcal info
     if (alreadySentTips.find(player.GetPlayerName() + weaponid1) == -1){
@@ -267,9 +275,12 @@ void function GunTipsThread(entity player, int waitTime, int iteration){
         wait 5
     }
 
-    if ( !IsValid(player) || !IsAlive(player) ){
+    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() ){
+        printl("[REBALANCETIPS] Interrupted, player no longer needs tips")
         return
     }
+
+    printl("[REBALANCETIPS] Sending message three to " + player.GetPlayerName())
 
     // Send ordnance and/or sidearm info, if that is sent, send AT weapon info
     if (alreadySentTips.find(player.GetPlayerName() + weaponid2) == -1 && alreadySentTips.find(player.GetPlayerName() + offhandid1) == -1){

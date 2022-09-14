@@ -13,11 +13,12 @@ global function GetAmpedWallsActiveCountForPlayer
 
 const DEPLOYABLE_ONE_PER_PLAYER = false
 const DEPLOYABLE_SHIELD_DURATION = 15.0
-const DEPLOYABLE_SHIELD_DURATION_REBALANCE = 4.0
+const DEPLOYABLE_SHIELD_DURATION_REBALANCE = 3.5
 
 const DEPLOYABLE_SHIELD_FX = $"P_pilot_cover_shield"
 const DEPLOYABLE_SHIELD_FX_AMPED = $"P_pilot_amped_shield"
 const DEPLOYABLE_SHIELD_HEALTH = 850
+const DEPLOYABLE_SHIELD_HEALTH_REBALANCE = 600
 
 const DEPLOYABLE_SHIELD_RADIUS = 84
 const DEPLOYABLE_SHIELD_HEIGHT = 89
@@ -193,8 +194,8 @@ void function DeployAmpedWall( entity grenade, vector origin, vector angles )
 	ampedWall.Hide()
 	ampedWall.SetTakeDamageType( DAMAGE_YES)
 	ampedWall.SetDamageNotifications( true )
-	ampedWall.SetMaxHealth( 300 )
-	ampedWall.SetHealth( 300 )
+	ampedWall.SetMaxHealth( DEPLOYABLE_SHIELD_HEALTH_REBALANCE )
+	ampedWall.SetHealth( DEPLOYABLE_SHIELD_HEALTH_REBALANCE )
 	ampedWall.EndSignal( "OnDestroy" )
 	SetVisibleEntitiesInConeQueriableEnabled( ampedWall, true )
 

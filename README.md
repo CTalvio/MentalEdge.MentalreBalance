@@ -5,31 +5,47 @@ This is my humble attempt at creating a different, balanced, titanfall 2 meta. T
 
 If you'd like to avoid the client-side glitches, simply install the mod client-side, as well.
 
-The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), and other changes such as the quite different behaviour of the charge rifle. However, the issues are visual only.
+The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), the issues are visual only.
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
 
-#### 1.1.3
+### Extra feature
 
-- Now modifies A-Wall and Phase
-- Now provides random good-to-know changes about guns other than those a player is using
-- Fixed two ways the mod would crash
-- The contextual/random tips can now be disabled/enabled with a convar
+The mod also includes a script that will send each player a few short messages when they join or start a match, letting them know the server is rebalanced, as well as a how their particular guns have been changed. So as to not be annoying, this will only happen again during a match, should the player swap or change their loadout. This feature can be disabled with a convar (check mod.json).
 
-#### 1.1.2
 
-- Bugfix
+### Changelog
 
-#### 1.1.1
+#### 1.1.8
 
-- Now modifies ordnance
 - Eva-8 changes
-- MGL changes
+- Double take changes
+- Electric smoke changes
+- R45 changes
+- Arc Grenade changes
+- R101/102 changes
+- Hemlok changes
+- Double Take changes
 
-#### 1.1.0
+#### 1.1.7
 
-- The mod now contextually tells players about changes to the particular guns they are using
-- Fixed folder layout
+- Charge Rifle changes
+- Fixed Double Take damage values being flipped
+- Fixed silencer bug on both wingmen
+
+#### 1.1.6
+
+- Fixed yet another crash bug
+
+#### 1.1.5
+
+- Silencers no longer have a damage penalty
+- Hemlok changes
+- A-Wall changes
+
+#### 1.1.4
+
+- Fixed crash that happens if tips tries to read weapons when a player is in a titan
 
 
 ## Changes
@@ -37,13 +53,13 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 ### Tacticals
 
     A-Wall
-    - Deployment time reduced 15s > 4s
-    - Wall health reduced 1000 > 300
+    - Deployment time reduced 15s > 3.5s
+    - Wall health reduced 1000 > 600
     - Cooldown reduced 30s > 20s (buff)
 
     Phase
     - Cooldown increased 20s > 25s
-    - Phase duration increased 2s > 3.5s (buff)
+    - Phase duration increased 2s > 3.5s (buff?)
 
 ### Ordnance
 
@@ -51,7 +67,9 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Unchanged
 
     Arc Grenade
-    - Activates quicker 0.75s > 0.2s
+    - Activates quicker 0.75s > 0.2s (buff)
+    - Damge reduced 40 > 20
+    - Splash radius changed 75 > 150 / 350 > 350
 
     Gravity Star
     - Unchanged
@@ -60,19 +78,22 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Unchanged
 
     Electric Smoke
-    - Damage increased
-    - Effective radius increased
+    - Damage increased 150 > 170 (buff)
+    - Effective radius increased 50 > 100 / 210 > 230 (buff)
 
     Satchel
-    - Larger splash radius 120 > 200 / 250 > 250
+    - Larger splash radius 120 > 200 / 250 > 250 (buff)
 
 ### Sidearms
+
+    All
+    -Silencer damage penalty removed
 
     P2016
     - Fire rate increased 8 > 9 (buff)
 
     R45
-    - Damage reduced 20 > 20 / 13 > 10
+    - Damage reduced 20 > 18 / 13 > 10
     - Damage falloff increased 750 > 500 / 1000 > 660
 
     Wingman B3
@@ -82,7 +103,7 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 ### Assault Rifles
 
     R101/R102
-    - Damage reduced 4 hit > 5 hit / 25 > 22 / 17 > 17
+    - Damage reduced 4 hit > 5 hit / 25 > 24 / 17 > 17
     - Hipfire accuracy reduced by ≈10%
     - ADS recoil increased by ≈20%
     - Inaccuracy fade increased 5 > 8 (buff)
@@ -91,10 +112,8 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Clip size reduced 24 > 18 / 30 > 24
     - Damage increased 4 hit > 3 hit / 33 > 35 / 25 > 30 / 20 > 20 (buff)
     - Hipfire accuracy increased by ≈30% (buff)
-    - Headshot multiplier increased 1.5 > 2.0 (buff)
-    - Recoil and ADS inaccuracy introduced
-    - Fire rate increased (burst delay) 0.25s > 0.22s (buff)
     - Spread decay increased 4 > 5 (buff)
+    - Recoil in ADS introduced
 
     G2
     - Damage reduced 40 > 40 / 35 > 30
@@ -158,8 +177,8 @@ If you'd like to contribute your complaints, suggestions or praises you can join
 ### Shotguns
 
     EVA-8
-    - Damage reduced 200 > 160 / 10 > 10
-    - Max range increased 750 > 900
+    - Damage reduced 200 > 145 / 10 > 10
+    - Max range increased 750 > 900 (buff)
     - Added angle based damage boost/penalty
 
     Mastiff
@@ -190,16 +209,21 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     Kraber
     - Unchanged
 
-    Doubletake
+    Double Take
+    - Rate of fire reduced 2.0 > 1.8
     - Clip size reduced 6 > 5 / 8 > 7
     - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)
     - Damage falloff inverted 4500 > 700 / 15000 > 1000
     - Hipfire accuracy slightly increased by ≈25% (buff)
+    - Reload time increased by 15%
 
     DMR
     - Rate of fire reduced 3.0 > 2.0
 
 ### Pistols
+
+    All
+    - Silencer damage penalty removed
 
     Wingman Elite
     - Fire rate increased 2.6 > 3.5 (buff)
@@ -216,7 +240,6 @@ If you'd like to contribute your complaints, suggestions or praises you can join
     - Ammo stash reduced 20 > 10 / 25 > 14
     - Titan damage increased 1025 > 1425 / 725 > 1125 (buff)
     - Damage falloff moved up 4800 > 1500 / 5300 > 2200
-    - Cooldown down speed increased 1.0 > 0.2
     - Rate of fire reduced 1 > 0.6
     - Titan weak spot crits introduced (1.25 multiplier) (buff)
 

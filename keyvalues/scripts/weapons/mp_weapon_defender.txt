@@ -34,7 +34,7 @@ WeaponData
 	"lower_time"  									"0.25"
 	"raise_time"  									"0.3"
 	"charge_time" 									"1.3"
-	"charge_cooldown_time"							"0.2"
+	"charge_cooldown_time"							"1.0"
 	"charge_cooldown_delay"   						"0.0"
 	"charge_end_forces_fire"						"0"
 	"allow_empty_fire"								"0"

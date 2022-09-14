@@ -2,7 +2,7 @@ WeaponData
 {
 	MP_BASE
 	{
-		"explosion_damage"								"150"
+		"explosion_damage"								"170"
 		"explosion_inner_radius"  						"100"
 		"explosionradius" 								"230"
 	}

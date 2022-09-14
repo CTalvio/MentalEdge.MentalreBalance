@@ -23,7 +23,7 @@ WeaponData
    	 	"damage_very_far_value"							"20"
    		"damage_very_far_distance"						"3500"
 
-		"damage_headshot_scale"							"2"
+		"damage_headshot_scale"							"1.5"
 
 		"red_crosshair_range" 							"1500"
 
@@ -32,7 +32,7 @@ WeaponData
 	// Behavior
 	"fire_rate"   									"15.5"
 	"burst_fire_count"								"3"
-	"burst_fire_delay"								"0.22"
+	"burst_fire_delay"								"0.25"
 	"zoom_time_in"									"0.25"
 	"zoom_time_out"   								"0.2"
 	"zoom_fov"										"35"
@@ -97,8 +97,8 @@ WeaponData
 	// View Kick
 	"viewkick_spring" 								"hemlok"
 
-	"viewkick_pitch_base" 							"-1.6"
-	"viewkick_pitch_random"   						"0.1"
+	"viewkick_pitch_base" 							"-1.7"
+	"viewkick_pitch_random"   						"0.3"
 	"viewkick_pitch_softScale"						"0.65"
 	"viewkick_pitch_hardScale"						"1.0"
 
@@ -121,8 +121,8 @@ WeaponData
 	"viewkick_scale_firstshot_hipfire"				"1.2"
 	"viewkick_scale_min_hipfire"  					"0.1"
 	"viewkick_scale_max_hipfire"  					"0.6"
-	"viewkick_scale_min_ads"  						"0.3"
-	"viewkick_scale_max_ads"  						"1.5"
+	"viewkick_scale_min_ads"  						"0.5"
+	"viewkick_scale_max_ads"  						"1.7"
 	"viewkick_scale_valuePerShot" 					"0.65"
 	"viewkick_scale_valueLerpStart"   				"0"
 	"viewkick_scale_valueLerpEnd" 					"6"
@@ -130,9 +130,9 @@ WeaponData
 	"viewkick_scale_valueDecayRate"   				"30"
 
 	"viewkick_perm_pitch_base"						"-0.35"
-	"viewkick_perm_pitch_random"  				 	"0.02"
+	"viewkick_perm_pitch_random"  				 	"0.1"
 	"viewkick_perm_yaw_base"						"0.0"
-	"viewkick_perm_yaw_random"						"0.02"
+	"viewkick_perm_yaw_random"						"0.4"
 
 	Mods
 	{

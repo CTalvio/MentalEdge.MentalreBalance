@@ -2,9 +2,9 @@ WeaponData
 {
 	MP_BASE
 	{
-		"explosion_damage"								"40"
+		"explosion_damage"								"20"
 		"explosion_damage_heavy_armor"					"400"
-        "explosion_inner_radius"  						"75"
+        "explosion_inner_radius"  						"150"
         "explosionradius" 								"350"
 
 		"npc_explosion_damage"							"60"
