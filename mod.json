@@ -3,12 +3,12 @@
    "Description": "Weapons rebalance, currently modifies all primary pilot weapons, anti-titan weapons and sidearms.",
    "LoadPriority": 5,
    "RequiredOnClient": false,
-   "Version": "1.1.8",
+   "Version": "1.2.4",
    "ConVars": [
-      {
-         "Name": "rebalance_tips",
-         "DefaultValue": "1" // Set to zero to disable the contextual and random change tips.
-      }
+        {
+        "Name": "rebalance_tips", // Set this to zero to disable the contextual loadout tips
+        "DefaultValue": "0"
+        }
    ],
    "Scripts": [
       {
@@ -17,6 +17,10 @@
          "ServerCallback": {
             "After": "GunTipsInit"
          }
+      },
+      {
+         "Path": "changedata.nut",
+         "RunOn": "( SERVER ) && MP"
       }
    ]
 }

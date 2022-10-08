@@ -63,11 +63,17 @@ WeaponData
 
 
 	// Spread
-	"spread_stand_hip"								"3.5"
-	"spread_stand_hip_run"							"6.5"
-	"spread_stand_hip_sprint"                       "7.5"
-	"spread_crouch_hip"   							"3.3"
-	"spread_air_hip"  								"8.0"
+	//"spread_stand_hip"								"3.5"
+	//"spread_stand_hip_run"							"6.5"
+	//"spread_stand_hip_sprint"                         "7.5"
+	//"spread_crouch_hip"   							"3.3"
+	//"spread_air_hip"  								"8.0"
+
+	"spread_stand_hip"								"5.5"
+	"spread_stand_hip_run"							"8.0"
+	"spread_stand_hip_sprint"                       "11.0"
+	"spread_crouch_hip"   							"4.5"
+	"spread_air_hip"  								"11.0"
 
 	"spread_stand_ads"								"0.3"
 	"spread_crouch_ads"   							"0.1"
@@ -90,14 +96,14 @@ WeaponData
 	"spread_max_kick_air_ads" 						"0"
 
 	"spread_decay_delay"  							"0.05"
-	"spread_decay_rate"   							"5"
+	"spread_decay_rate"   							"5.5"
 
 	"ammo_suck_behavior"							"primary_weapons"
 
 	// View Kick
 	"viewkick_spring" 								"hemlok"
 
-	"viewkick_pitch_base" 							"-1.7"
+	"viewkick_pitch_base" 							"-1.6"
 	"viewkick_pitch_random"   						"0.3"
 	"viewkick_pitch_softScale"						"0.65"
 	"viewkick_pitch_hardScale"						"1.0"
@@ -380,7 +386,7 @@ WeaponData
 		Crosshair_1
 		{
 			"ui"						"ui/crosshair_tri"
-			"base_spread"				"-2.0"
+			"base_spread"				"0.0"
 			Args
 			{
 				//isFiring				weapon_is_firing

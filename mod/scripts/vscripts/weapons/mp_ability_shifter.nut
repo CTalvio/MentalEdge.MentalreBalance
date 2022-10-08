@@ -5,6 +5,7 @@ global function AbilityShifter_ApplyInProgressStimIfNeeded
 
 const SHIFTER_WARMUP_TIME = 0.0
 const SHIFTER_WARMUP_TIME_FAST = 0.0
+const REBALANCE_PHASE_DURATION = 4.0
 
 const string PHASEEXIT_IMPACT_TABLE_PROJECTILE	= "default"
 const string PHASEEXIT_IMPACT_TABLE_TRACE		= "superSpectre_groundSlam_impact"
@@ -57,26 +58,84 @@ var function OnWeaponPrimaryAttack_shifter( entity weapon, WeaponPrimaryAttackPa
 	entity weaponOwner = weapon.GetWeaponOwner()
 
 	int pmLevel = GetPVEAbilityLevel( weapon )
-
-	print ("phase thisran 6")
-	int phaseResult = PhaseShift( weaponOwner, warmupTime, 4.0 )
-	if ( phaseResult )
+	if ( weaponOwner.IsPlayer() && (pmLevel >= 0) )
 	{
-		print ("phase thisran 7")
-		PlayerUsedOffhand( weaponOwner, weapon )
-		#if BATTLECHATTER_ENABLED && SERVER
-			TryPlayWeaponBattleChatterLine( weaponOwner, weapon )
-		#endif
+		if ( weaponOwner.IsPhaseShifted() )
+		{
+			float scriptTime = weapon.GetScriptTime0()
+			if ( (pmLevel >= 2) && (scriptTime != 0.0) )
+			{
+				float chargeMaxTime = weapon.GetWeaponSettingFloat( eWeaponVar.custom_float_0 )
+				float chargeTime = (Time() - scriptTime)
+				if ( chargeTime >= chargeMaxTime )
+				{
+					DoPhaseExitExplosion( weaponOwner, weapon )
+					StatusEffect_AddTimed( weaponOwner, eStatusEffect.move_slow, 1.0, 1.5, 1.5 )	// "stick" a bit more than usual on exit
+				}
+			}
 
-		return weapon.GetWeaponSettingInt( eWeaponVar.ammo_min_to_fire )
+			CancelPhaseShift( weaponOwner );
+			EndlessStimEnd( weaponOwner )
+
+			if ( pmLevel >= 0 )
+				StatusEffect_AddTimed( weaponOwner, eStatusEffect.move_slow, 0.75, 0.75, 0.75 )	// "stick" a bit on exit
+
+			return weapon.GetWeaponSettingInt( eWeaponVar.ammo_min_to_fire )
+		}
+		else
+		{
+			PhaseShift( weaponOwner, 0, 99999 );
+			if ( pmLevel >= 1 )
+				EndlessStimBegin( weaponOwner, PMMOD_ENDLESS_STRENGTH )
+			return 0
+		}
 	}
-	else {
-		print ("phase thisran 3")
-		CancelPhaseShift( weaponOwner )
+	else
+	{
+		int phaseResult = PhaseShift( weaponOwner, warmupTime, REBALANCE_PHASE_DURATION )
+		if ( phaseResult )
+		{
+			PlayerUsedOffhand( weaponOwner, weapon )
+			#if BATTLECHATTER_ENABLED && SERVER
+				TryPlayWeaponBattleChatterLine( weaponOwner, weapon )
+			#endif
+
+			thread SetAmmo( weaponOwner, weapon )
+			return weapon.GetWeaponSettingInt( eWeaponVar.ammo_min_to_fire )
+		}
+		else {
+			CancelPhaseShift( weaponOwner )
+			return weapon.GetWeaponSettingInt( eWeaponVar.ammo_min_to_fire )
+		}
 	}
 
-	print ("phase thisran 8")
 	return 0
+}
+
+void function SetAmmo(entity player, entity weapon){
+	wait 1.3
+	if ( IsValid(weapon) && player.IsPhaseShifted() ){
+		weapon.SetWeaponPrimaryClipCount(200)
+	}
+	wait 0.6
+	if ( IsValid(weapon) && !player.IsPhaseShifted() ){
+		weapon.SetWeaponPrimaryClipCount(40)
+		return
+	}
+	wait 0.3
+	if ( IsValid(weapon) && !player.IsPhaseShifted() ){
+		weapon.SetWeaponPrimaryClipCount(30)
+		return
+	}
+	wait 0.3
+	if ( IsValid(weapon) && !player.IsPhaseShifted() ){
+		weapon.SetWeaponPrimaryClipCount(20)
+		return
+	}
+	wait 1.3
+	if ( IsValid(weapon) && player.IsPhaseShifted() ){
+		weapon.SetWeaponPrimaryClipCount(0)
+	}
 }
 
 void function ApplyInProgressStimIfNeededThread( entity player )

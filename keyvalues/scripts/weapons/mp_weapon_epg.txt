@@ -1,7 +1,7 @@
 WeaponData
 {
 	// Ammo
-	"ammo_clip_size"   								"4"
+	"ammo_clip_size"   								"5"
 	"ammo_min_to_fire"								"1"
 
 	"bolt_hitsize"									"0.0"
@@ -174,7 +174,7 @@ WeaponData
        	extended_ammo
 		{
 			"ammo_stockpile_max"				"120"
-			"ammo_clip_size"   					"6"
+			"ammo_clip_size"   					"8"
 			"ammo_default_total"				"120"
 		}
         delayed_shot

@@ -27,12 +27,12 @@ WeaponData
 
 		// Damage - When Used by Players
 		"damage_near_value"   							"34"
-		"damage_far_value"								"28"
+		"damage_far_value"								"23"
 		"damage_near_value_titanarmor"					"30"
 		"damage_far_value_titanarmor" 					"20"
 	//	"explosion_damage"								"50"	// 150
 	//	"explosion_damage_heavy_armor"					"50"	// 150
-		"damage_near_distance"							"500"
+		"damage_near_distance"							"175"
 		"damage_far_distance" 							"1000"
 
 		"red_crosshair_range" 							"750"
@@ -52,7 +52,7 @@ WeaponData
 	"bolt_gravity_enabled"							"1"
 
 	// Behavior
-	"fire_rate"   									"3.0"
+	"fire_rate"   									"2.8"
 	"zoom_time_in"									"0.2"
 	"zoom_time_out"   								"0.15"
 	"zoom_fov"										"55"

@@ -12,14 +12,14 @@ WeaponData
 
 		"damage_flags"									"DF_BULLET | DF_INSTANT | DF_DISMEMBERMENT"
 
-		"damage_near_value"   							"24"//33
-		"damage_far_value"								"17"//15
+		"damage_near_value"   							"25"//33
+		"damage_far_value"								"18"//15
 
 		"damage_near_value_titanarmor"					"70"
 		"damage_far_value_titanarmor" 					"50"
 
-		"damage_near_distance"							"1500"
-		"damage_far_distance" 							"2000"
+		"damage_near_distance"							"750"
+		"damage_far_distance" 							"1800"
 
 	    "damage_very_far_value"							"12"
 	    "damage_very_far_distance"						"3500"
@@ -102,7 +102,7 @@ WeaponData
 	"spread_wallhanging"  							"6.5"
 
 	"spread_decay_delay"  							"0.05"
-	"spread_decay_rate"   							"8"
+	"spread_decay_rate"   							"7"
 
 	"ammo_suck_behavior"							"primary_weapons"
 

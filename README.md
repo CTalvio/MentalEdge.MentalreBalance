@@ -9,48 +9,51 @@ The server side only issues are caused by client/server conflicts with guns that
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
 
-### Extra feature
+### !changes command
 
-The mod also includes a script that will send each player a few short messages when they join or start a match, letting them know the server is rebalanced, as well as a how their particular guns have been changed. So as to not be annoying, this will only happen again during a match, should the player swap or change their loadout. This feature can be disabled with a convar (check mod.json).
+The mod also includes a script that will allow players to use the !changes chat command to access the changelog for any gun, as well as get summaries of changes to their current loadout or a category (such as "assault rifles"). This requires FSU to work.
+
+Get FSU here: [Fifty's Server Utilities](https://northstar.thunderstore.io/package/Fifty/Server_Utilities/)
+
+Alternatively, get my improved version here: [FSU-fvnk](https://northstar.thunderstore.io/package/MentalEdge/FSUfvnk/)
+
+You can run the rebalance without FSU by swapping out "guntips.nut" for "guntipsold.nut" in vscripts.
+
+#### Thank you
+
+These peeps have contributed a ton to the rebalance by play testing, discussing, suggesting, and sometimes complaining about, changes. It would not have turned out as good as it is without them.
+
+- Mauer-Läufer#4236
+- Illuin
+- Sain't
+- TiclanRaider (Plazma52)
 
 
 ### Changelog
 
-#### 1.1.8
+#### 1.2.4
 
+- Fixed weapon match not working when spaces are used
+- Re-added contextual loadout tips
 - Eva-8 changes
-- Double take changes
-- Electric smoke changes
-- R45 changes
-- Arc Grenade changes
-- R101/102 changes
-- Hemlok changes
-- Double Take changes
-
-#### 1.1.7
-
+- L-STAR changes
 - Charge Rifle changes
-- Fixed Double Take damage values being flipped
-- Fixed silencer bug on both wingmen
 
-#### 1.1.6
+previous versions at the bottom
 
-- Fixed yet another crash bug
+## Full Changelist
 
-#### 1.1.5
+### General
 
-- Silencers no longer have a damage penalty
-- Hemlok changes
-- A-Wall changes
+    Silencers
+    - Damage penalty removed
 
-#### 1.1.4
+    Health regen
+    - Start delay 5s > 3.8s (buff)
+    - Start delay when using fast regen 2.5s > 2.9s
+    - Regen is 15% slower
 
-- Fixed crash that happens if tips tries to read weapons when a player is in a titan
-
-
-## Changes
-
-### Tacticals
+### Tactical
 
     A-Wall
     - Deployment time reduced 15s > 3.5s
@@ -58,8 +61,21 @@ The mod also includes a script that will send each player a few short messages w
     - Cooldown reduced 30s > 20s (buff)
 
     Phase
-    - Cooldown increased 20s > 25s
-    - Phase duration increased 2s > 3.5s (buff?)
+    - Cooldown increased 20s > 24s
+    - Phase duration increased 2s > 4s (buff)
+    - Phase can be ended up to 2.5s early (buff)
+    - Early cancel can shorten cooldown by up to 6 seconds.
+
+    Holopilot
+    - Provides cloak for 1.8 seconds on decoy creation (buff)
+    - Decoy copies owner health bar appearance (buff)
+    - Decoy health increased 50 > 65 (buff)
+    - Cooldown increased, 20 seconds per charge
+    - Second charge cannot be used before cloak expires
+
+    Stim
+    - Heals 25hp on activation (buff)
+    - Regen while stimming is 20% slower
 
 ### Ordnance
 
@@ -68,7 +84,7 @@ The mod also includes a script that will send each player a few short messages w
 
     Arc Grenade
     - Activates quicker 0.75s > 0.2s (buff)
-    - Damge reduced 40 > 20
+    - Damage reduced 40 > 20
     - Splash radius changed 75 > 150 / 350 > 350
 
     Gravity Star
@@ -103,15 +119,15 @@ The mod also includes a script that will send each player a few short messages w
 ### Assault Rifles
 
     R101/R102
-    - Damage reduced 4 hit > 5 hit / 25 > 24 / 17 > 17
+    - Damage changed 25 > 25 / 17 > 18
+    - Falloff changed 1500 > 750 / 2000 > 1800
     - Hipfire accuracy reduced by ≈10%
     - ADS recoil increased by ≈20%
-    - Inaccuracy fade increased 5 > 8 (buff)
+    - Inaccuracy fade increased 5 > 7 (buff)
 
     Hemlok
     - Clip size reduced 24 > 18 / 30 > 24
     - Damage increased 4 hit > 3 hit / 33 > 35 / 25 > 30 / 20 > 20 (buff)
-    - Hipfire accuracy increased by ≈30% (buff)
     - Spread decay increased 4 > 5 (buff)
     - Recoil in ADS introduced
 
@@ -192,7 +208,6 @@ The mod also includes a script that will send each player a few short messages w
     EPG
     - Splash damage reduced 90 > 80
     - Splash damage radius reduced 150 > 130
-    - Magazine capacity reduced 5 > 4 / 8 > 6
 
     Softball
     - Unchanged
@@ -210,10 +225,10 @@ The mod also includes a script that will send each player a few short messages w
     - Unchanged
 
     Double Take
-    - Rate of fire reduced 2.0 > 1.8
+    - Rate of fire reduced 2.0 > 1.7
     - Clip size reduced 6 > 5 / 8 > 7
     - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)
-    - Damage falloff inverted 4500 > 700 / 15000 > 1000
+    - Damage falloff inverted 4500 > 900 / 15000 > 1100
     - Hipfire accuracy slightly increased by ≈25% (buff)
     - Reload time increased by 15%
 
@@ -230,8 +245,9 @@ The mod also includes a script that will send each player a few short messages w
     - Recoil increased by ≈160%
 
     Mozambique
-    - Damage increased 4 hit > 3 hit / 30 > 34 / 25 > 28 (buff)
-    - Damage falloff moved up 750 > 500
+    - Fire rate decreased 3.0 > 2.8
+    - Damage increased 4 hit > 3 hit / 30 > 34 / 25 > 23 (buff)
+    - Damage falloff moved up 750 > 175
     - Reduced reload time by 15% (buff)
 
 ### Anti-Titan
@@ -254,3 +270,86 @@ The mod also includes a script that will send each player a few short messages w
 
     Archer
     - Unchanged
+
+### Previous versions
+
+#### 1.2.3
+
+- Mozambique changes
+- Doubletake changes
+- !changes now provides rebalance version number
+- Overarching chat color theme support using MentalEdge.theme (included)
+
+#### 1.2.2
+
+- Mozambique changes
+- R101/102 changes
+- Hemlok changes
+- FSU is now "required" to use the new !changes command to access the changelof database in-game
+- If you do not wish to use FSU, swap out guntips.nut for guntipsold.nut
+
+#### 1.2.1
+
+- Fixed crash that could occur when activating stim (while dead, somehow)
+
+#### 1.2.0
+
+- Phase shift changes
+- Stim changes
+- Holopilot changes
+- R101/102 changes
+- EPG changes
+- Health regen is now balanced
+- FSU support for a !changes info command
+
+#### 1.1.10
+
+- Eva-8 changes
+- Double take changes
+- Electric smoke changes
+- R45 changes
+- Arc Grenade changes
+- R101/102 changes
+- Hemlok changes
+
+#### 1.1.7
+
+- Charge Rifle changes
+- Fixed Double Take damage values being flipped
+- Fixed silencer bug on both wingmen
+
+#### 1.1.6
+
+- Fixed yet another crash bug
+
+#### 1.1.5
+
+- Silencers no longer have a damage penalty
+- Hemlok changes
+- A-Wall changes
+
+#### 1.1.4
+
+- Fixed crash that happens if tips tries to read weapons when a player is in a titan
+
+#### 1.1.3
+
+- Now modifies A-Wall and Phase
+- Now provides random good-to-know changes about guns other than those a player is using
+- Fixed two ways the mod would crash
+- The contextual/random tips can now be disabled/enabled with a convar
+
+#### 1.1.2
+
+- Bugfix
+
+#### 1.1.1
+
+- Now modifies ordnance
+- Eva-8 changes
+- MGL changes
+
+#### 1.1.0
+
+- The mod now contextually tells players about changes to the particular guns they are using
+- Fixed folder layout
