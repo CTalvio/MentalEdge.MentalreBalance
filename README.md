@@ -1,11 +1,11 @@
 # MentalreBalance
 
 
-This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using without noticably increasing the quick and intense TTK of titanfall, instead giving each gun strenghts and weaknesses making none a jack of all trades. Making any one gun more equally effective when wielded with skill and situational awareness, and fun, always. Changes are extensive, and the mod can be used server side only, though this will cause some wierdness clientside. None of it is game-breaking. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
+This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using without noticably increasing the quick and intense TTK of titanfall, instead giving each gun strenghts and weaknesses making none a jack of all trades. Making any one gun more equally effective when wielded with skill and situational awareness, and fun, always. Changes are extensive, and the mod can be used server side only. Though there are some small "glitches", none of it is game-breaking, or even very noticable. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
 
 If you'd like to avoid the client-side glitches, simply install the mod client-side, as well.
 
-The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full), modified spread behaviour (hipfire indicators will jitter), the issues are visual only.
+The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full).
 
 If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
 
@@ -15,9 +15,7 @@ The mod also includes a script that will allow players to use the !changes chat 
 
 Get FSU here: [Fifty's Server Utilities](https://northstar.thunderstore.io/package/Fifty/Server_Utilities/)
 
-Alternatively, get my improved version here: [FSU-fvnk](https://northstar.thunderstore.io/package/MentalEdge/FSUfvnk/)
-
-You can run the rebalance without FSU by swapping out "guntips.nut" for "guntipsold.nut" in vscripts.
+You CAN now run the rebalance without FSU. You will not be able to use the !changes command, but contextual gun change info can still be enabled in mod.json.
 
 #### Thank you
 
@@ -31,13 +29,11 @@ These peeps have contributed a ton to the rebalance by play testing, discussing,
 
 ### Changelog
 
-#### 1.2.4
+## 1.3.0
 
-- Fixed weapon match not working when spaces are used
-- Re-added contextual loadout tips
-- Eva-8 changes
-- L-STAR changes
-- Charge Rifle changes
+- Updated for FSU2!
+- Now also works without FSU, without the !changes command
+- No rebalance changes
 
 previous versions at the bottom
 
@@ -272,6 +268,14 @@ previous versions at the bottom
     - Unchanged
 
 ### Previous versions
+
+#### 1.2.4
+
+- Fixed weapon match not working when spaces are used
+- Re-added contextual loadout tips
+- Eva-8 changes
+- L-STAR changes
+- Charge Rifle changes
 
 #### 1.2.3
 

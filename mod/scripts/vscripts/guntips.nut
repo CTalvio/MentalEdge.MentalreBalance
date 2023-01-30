@@ -31,7 +31,16 @@ array<string> goodToKnowList = [
 
 
 void function GunTipsInit(){
-    FSU_RegisterCommand( "changes", AccentOne( FSU_GetString("FSU_PREFIX") + "changes <loadout/item/category>") + " - view rebalance changes.", "edg", infoCommand, ["rebalance","nerfs","nerf","buff","buffs","changelog","change"] )
+
+#if FSCC_ENABLED
+	FSCC_CommandStruct command
+	command.m_UsageUser = "changes <loadout/item/category>"
+	command.m_Description = "View rebalance changes."
+	command.m_Group = "REBALANCE"
+	command.m_Abbreviations = ["rebalance","nerfs","nerf","buff","buffs","changelog","change"]
+	command.Callback = infoCommand
+	FSCC_RegisterCommand( "changes", command )
+#endif
 
     if (GetConVarInt( "rebalance_tips" ) == 1){
         AddCallback_GameStateEnter( eGameState.Playing, Playing)
@@ -68,42 +77,13 @@ void function GunTipsThread(entity player, int waitTime){
     }
 }
 
-void function infoCommand( entity player, array < string > args ){
-
-    if ( args.len() == 0 ){
-        Chat_ServerPrivateMessage( player, ErrorColor("No argument!") + " Correct format is " + AccentOne("!changes <argument>"),false)
-        Chat_ServerPrivateMessage( player, baseTextColor + "To see a summary of the changes to your loadout, use the word " + AccentOne("loadout") + " as the argument.",false)
-        Chat_ServerPrivateMessage( player, baseTextColor + "Other valid summary arguments are " + AccentOne("ordnance") + ", " + AccentOne("tactical") + ", " + AccentOne("SMG") + ", etc.",false)
-        Chat_ServerPrivateMessage( player, baseTextColor + "You can also enter the name of a specific gun/ability/etc. for full details on it.",false)
-        Chat_ServerPrivateMessage( player, AccentTwo("Good to know: ") + goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )],false)
-        Chat_ServerPrivateMessage( player, AccentTwo("Rebalance version: ") + AccentOne(REBALANCE_VERSION), false)
-        return
-    }
-
-    string arg = ""
-    foreach(string part in args){
-        arg += part
-    }
-
-    if ( arg.find("load") != null ){
-        provideLoadout( player )
-        return
-    }
-
-    if ( arg.find("ordnan") != null || arg.find("tactic") != null || arg.find("gren") != null || arg.find("smg") != null || arg.find("lmg") != null || arg.find("assault") != null || arg == "ar" || arg == "ars" || arg.find("snipe") != null || arg.find("pisto") != null || arg.find("shot") != null || arg.find("sidearm") != null || arg.find("anti") != null ){
-        provideTypeSummary( player, arg )
-        return
-    }
-
-    provideItem( player, arg )
-}
-
-
 void function provideLoadout(entity player){
     array <int> itemIndex = []
 
     if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() || player.GetMainWeapons().len() != 3 || player.GetOffhandWeapons().len() != 3 ) {
-        Chat_ServerPrivateMessage( player, ErrorColor("Unable to get your loadout!") + "Are you dead or in a titan?", false)
+    #if FSCC_ENABLED
+        FSU_PrivateChatMessage( player, "%EUnable to get your loadout! %TAre you dead or in a titan?")
+    #endif
         return
     }
 
@@ -133,11 +113,50 @@ void function provideLoadout(entity player){
         }
     }
 
-    Chat_ServerPrivateMessage( player, AccentTwo("Summary of changes to your current loadout:") ,false )
+#if FSCC_ENABLED
+    FSU_PrivateChatMessage( player, "%HSummary of changes to your current loadout:")
     foreach(int i in itemIndex){
-        Chat_ServerPrivateMessage( player, changeData[i][summary] ,false )
+        FSU_PrivateChatMessage( player, "    " + changeData[i][summary])
     }
-    Chat_ServerPrivateMessage( player, AccentTwo("Good to know: ") +  goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )],false)
+    FSU_PrivateChatMessage( player, "%HGood to know: %T" + goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )])
+#else
+    Chat_ServerPrivateMessage( player, "\x1b[38;5;153mSummary of changes to your current loadout:", false)
+    foreach(int i in itemIndex){
+        Chat_ServerPrivateMessage( player, "    " + changeData[i][summary], false)
+    }
+    Chat_ServerPrivateMessage( player, "\x1b[38;5;153mGood to know: \x1b[0m" + goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )], false)
+#endif
+}
+
+#if FSCC_ENABLED
+void function infoCommand( entity player, array < string > args ){
+
+    if ( args.len() == 0 ){
+        FSU_PrivateChatMessage( player, "%ENo argument! %TCorrect format is %H!changes <argument>")
+        FSU_PrivateChatMessage( player, "    To see a summary of the changes to your loadout, use the word %Hloadout%T as the argument.")
+        FSU_PrivateChatMessage( player, "    Other valid summary arguments are %Hordnance%T, %Htactical%T, %HSMG%T, etc.")
+        FSU_PrivateChatMessage( player, "    You can also enter the name of a specific gun/ability/etc. for full details on it.")
+        FSU_PrivateChatMessage( player, "%HGood to know: %T" + goodToKnowList[RandomIntRange( 0, goodToKnowList.len() - 1 )])
+        FSU_PrivateChatMessage( player, "%HRebalance version: %F" + REBALANCE_VERSION)
+        return
+    }
+
+    string arg = ""
+    foreach(string part in args){
+        arg += part
+    }
+
+    if ( arg.find("load") != null ){
+        provideLoadout( player )
+        return
+    }
+
+    if ( arg.find("ordnan") != null || arg.find("tactic") != null || arg.find("gren") != null || arg.find("smg") != null || arg.find("lmg") != null || arg.find("assault") != null || arg == "ar" || arg == "ars" || arg.find("snipe") != null || arg.find("pisto") != null || arg.find("shot") != null || arg.find("sidearm") != null || arg.find("anti") != null ){
+        provideTypeSummary( player, arg )
+        return
+    }
+
+    provideItem( player, arg )
 }
 
 void function provideTypeSummary(entity player, string arg){
@@ -146,52 +165,51 @@ void function provideTypeSummary(entity player, string arg){
     array <int> itemIndex = []
 
     if ( arg.find("ordnan") != null ){
-        message = AccentTwo("Displaying summary of changes to Ordnance:")
+        message = "Displaying summary of changes to Ordnance:"
         selectedType = "ordnance"
-        print("thisran 7")
     }
     if ( arg.find("tactic") != null ){
-        message = AccentTwo("Displaying summary of changes to Tacticals:")
+        message = "Displaying summary of changes to Tacticals:"
         selectedType = "tactical"
     }
     if ( arg.find("gren") != null ){
-        message = AccentTwo("Displaying summary of changes to Grenades:")
+        message = "Displaying summary of changes to Grenades:"
         selectedType = "grenadier"
     }
     if ( arg.find("smg") != null ){
-        message = AccentTwo("Displaying summary of changes to SMGs:")
+        message = "Displaying summary of changes to SMGs:"
         selectedType = "smg"
     }
     if ( arg.find("lmg") != null ){
-        message = AccentTwo("Displaying summary of changes to LMGs:")
+        message = "Displaying summary of changes to LMGs:"
         selectedType = "lmg"
     }
     if ( arg.find("assault") != null ){
-        message = AccentTwo("Displaying summary of changes to Assault Rifles:")
+        message = "Displaying summary of changes to Assault Rifles:"
         selectedType = "ar"
     }
     if ( arg.find("ar") != null ){
-        message = AccentTwo("Displaying summary of changes to Assault Rifles:")
+        message = "Displaying summary of changes to Assault Rifles:"
         selectedType = "ar"
     }
     if ( arg.find("snipe") != null ){
-        message = AccentTwo("Displaying summary of changes to Snipers:")
+        message = "Displaying summary of changes to Snipers:"
         selectedType = "sniper"
     }
     if ( arg.find("pisto") != null ){
-        message = AccentTwo("Displaying summary of changes to Pistols:")
+        message = "Displaying summary of changes to Pistols:"
         selectedType = "pistol"
     }
     if ( arg.find("shot") != null ){
-        message = AccentTwo("Displaying summary of changes to Shotguns:")
+        message = "Displaying summary of changes to Shotguns:"
         selectedType = "shotgun"
     }
     if ( arg.find("sidearm") != null ){
-        message = AccentTwo("Displaying summary of changes to Sidearms:")
+        message = "Displaying summary of changes to Sidearms:"
         selectedType = "sidearm"
     }
     if ( arg.find("anti") != null ){
-        message = AccentTwo("Displaying summary of Anti-Titan weapon changes:")
+        message = "Displaying summary of Anti-Titan weapon changes:"
         selectedType = "antititan"
     }
 
@@ -201,9 +219,9 @@ void function provideTypeSummary(entity player, string arg){
         }
     }
 
-    Chat_ServerPrivateMessage( player, message ,false )
+    FSU_PrivateChatMessage( player, "%H" + message )
     foreach(int i in itemIndex){
-        Chat_ServerPrivateMessage( player, changeData[i][summary] ,false )
+        FSU_PrivateChatMessage( player, "    " + changeData[i][summary] )
     }
 }
 
@@ -222,11 +240,12 @@ void function provideItem(entity player, string arg){
     }
 
     if(itemIndex != -1){
-        Chat_ServerPrivateMessage( player, AccentTwo(changeData[itemIndex][name] + ":") ,false)
+        FSU_PrivateChatMessage( player, "%H" + changeData[itemIndex][name] + ":" )
         foreach(string message in split(changeData[itemIndex][details], "\n" )){
-            Chat_ServerPrivateMessage( player, baseTextColor + message ,false)
+            FSU_PrivateChatMessage( player, "    " + message )
         }
     }
     else
-        Chat_ServerPrivateMessage( player, ErrorColor("No match for that argument!"), false)
+        FSU_PrivateChatMessage( player, "%ENo match for that argument!")
 }
+#endif
