@@ -4,6 +4,10 @@
    "LoadPriority": 5,
    "RequiredOnClient": false,
    "Version": "1.3.0",
+   "Dependencies": {
+      "FSCC_ENABLED": "Fifty.ServerChatCommands [FSCC]"
+   },
+
    "ConVars": [
         {
         "Name": "rebalance_tips",

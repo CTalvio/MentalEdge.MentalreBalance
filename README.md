@@ -29,6 +29,10 @@ These peeps have contributed a ton to the rebalance by play testing, discussing,
 
 ### Changelog
 
+## 1.3.1
+
+- Bugfix
+
 ## 1.3.0
 
 - Updated for FSU2!
