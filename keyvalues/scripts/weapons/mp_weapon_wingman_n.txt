@@ -92,40 +92,6 @@ WeaponData
 	"impulse_force"   								"10"
 	"ammo_suck_behavior"							"primary_weapons"
 
-	// View Kick
-	"viewkick_spring" 								"magnum"
-
-	"viewkick_pitch_base" 							"-1.3"
-	"viewkick_pitch_random"   						".3"
-	"viewkick_pitch_softScale"						"0.2"
-	"viewkick_pitch_hardScale"						"2.2"
-
-	"viewkick_yaw_base"   							"0.05"
-	"viewkick_yaw_random" 							"0.0"
-	"viewkick_yaw_softScale"  						"0.5"
-	"viewkick_yaw_hardScale"  						"1.5"
-
-	"viewkick_roll_base"  							"0"
-	"viewkick_roll_randomMin" 						"0.2"
-	"viewkick_roll_randomMax" 						"0.4"
-	"viewkick_roll_softScale" 						"0.2"
-	"viewkick_roll_hardScale" 						"2.25"
-
-	"viewkick_hipfire_weaponFraction" 				"0.25"
-	"viewkick_hipfire_weaponFraction_vmScale" 		"0.0"
-	"viewkick_ads_weaponFraction" 					"0.35"
-	"viewkick_ads_weaponFraction_vmScale" 			"0.0"
-
-	"viewkick_perm_pitch_base"				 		"0.0"
-	"viewkick_perm_pitch_random"   					"0.0"
-	"viewkick_perm_yaw_base"   						"0.0"
-	"viewkick_perm_yaw_random" 						"0.0"
-
-	//
-	"viewmodel_shake_forward"						"0.5"
-	"viewmodel_shake_up"							"0.2"
-	"viewmodel_shake_right"							"0.0"
-
 	// Spread
 	"spread_stand_hip" 								"0"
 	"spread_stand_hip_run" 							"0"
@@ -136,22 +102,24 @@ WeaponData
 	"spread_crouch_ads"  							"0" //"0.1"
 	"spread_air_ads"   								"0" //"0.25"
 
-	"spread_kick_on_fire_stand_hip"					"0"
-	"spread_kick_on_fire_crouch_hip"				"0"
-	"spread_kick_on_fire_air_hip"					"0"
+	"spread_kick_on_fire_stand_hip"					"8"
+	"spread_kick_on_fire_crouch_hip"				"8"
+	"spread_kick_on_fire_air_hip"					"8"
+
 	"spread_kick_on_fire_stand_ads"					"0"
 	"spread_kick_on_fire_crouch_ads"				"0"
 	"spread_kick_on_fire_air_ads"					"0"
 
-	"spread_max_kick_stand_hip"						"0"
-	"spread_max_kick_crouch_hip"					"0"
-	"spread_max_kick_air_hip"						"0"
+	"spread_max_kick_stand_hip"						"8"
+	"spread_max_kick_crouch_hip"					"8"
+	"spread_max_kick_air_hip"						"8"
+
 	"spread_max_kick_stand_ads"						"0"
 	"spread_max_kick_crouch_ads"					"0"
 	"spread_max_kick_air_ads"						"0"
 
-	"spread_decay_rate"   							"11.0"
-	"spread_decay_delay"  							".21"
+	"spread_decay_delay"  							"0.15"
+	"spread_decay_rate"   							"20"
 
 	}
 

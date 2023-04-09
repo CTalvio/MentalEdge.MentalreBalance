@@ -17,7 +17,7 @@ WeaponData
 		"aimassist_adspull_weaponclass"					"broad"
 
 		// Damage - When Used by Players
-		"damage_near_value"   							"18"
+		"damage_near_value"   							"17"
 		"damage_far_value"								"12"
 		"damage_near_value_titanarmor"					"70"
 		"damage_far_value_titanarmor" 					"35"
@@ -26,7 +26,7 @@ WeaponData
    	 	"damage_very_far_value"							"8"
    		"damage_very_far_distance"						"3000"
 
-		"damage_headshot_scale"							"2.2"
+		"damage_headshot_scale"							"1.9"
 
 		// View Drift
 

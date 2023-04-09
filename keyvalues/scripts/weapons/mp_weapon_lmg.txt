@@ -63,14 +63,6 @@ WeaponData
 	"sprint_fractional_anims"						"0"
 
 	// Spread
-	"spread_stand_hip"								"1.7"
-	"spread_stand_hip_run"							"1.7"
-	"spread_stand_hip_sprint"                       "1.7"
-	"spread_crouch_hip"   							"1.7"
-	"spread_stand_ads"  							"0.7" //"0.25"
-	"spread_crouch_ads"  							"0.5" //"0.2"
-	"spread_air_ads"								"0.8"
-
 	"spread_kick_on_fire_stand_hip"   				"1.7"
 	"spread_kick_on_fire_crouch_hip"  				"1.7"
 	"spread_kick_on_fire_air_hip" 					"1.7"
@@ -118,9 +110,9 @@ WeaponData
 	"viewkick_scale_firstshot_hipfire"				"1.2"
 	"viewkick_scale_min_hipfire"  					"1"
 	"viewkick_scale_max_hipfire"  					"1"
-	"viewkick_scale_min_ads"  						"1.2"
-	"viewkick_scale_max_ads"  						"2.2"
-	"viewkick_scale_valuePerShot" 					"0.4"
+	"viewkick_scale_min_ads"  						"0.3"
+	"viewkick_scale_max_ads"  						"1.5"
+	"viewkick_scale_valuePerShot" 					"0.3"
 	"viewkick_scale_valueLerpStart"   				"0"
 	"viewkick_scale_valueLerpEnd" 					"10"
 	"viewkick_scale_valueDecayDelay"  				"0.22"

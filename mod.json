@@ -1,9 +1,9 @@
 {
-   "Name": "MentalEdge.MentalreBalance",
+   "Name": "MentalEdge.PilotreBalance",
    "Description": "Weapons rebalance, currently modifies all primary pilot weapons, anti-titan weapons and sidearms.",
    "LoadPriority": 5,
    "RequiredOnClient": false,
-   "Version": "1.3.0",
+   "Version": "1.3.2",
    "Dependencies": {
       "FSCC_ENABLED": "Fifty.ServerChatCommands [FSCC]"
    },
@@ -11,7 +11,7 @@
    "ConVars": [
         {
         "Name": "rebalance_tips",
-        "DefaultValue": "0"  // Set this to zero to disable the contextual loadout tips.  This does not require FSU, and is without it the only way the mod can provide players with info about the changes to their guns.
+        "DefaultValue": "0"  // Set this to zero to disable the contextual loadout tips. This does not require FSU, and is without it the only way the mod can provide players with info about the changes to their guns.
         }
    ],
    "Scripts": [

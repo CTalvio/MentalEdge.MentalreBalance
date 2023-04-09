@@ -1,5 +1,4 @@
-# MentalreBalance
-
+# MENTAL PilotreBalance
 
 This is my humble attempt at creating a different, balanced, titanfall 2 meta. The goal has been to make each gun worth using without noticably increasing the quick and intense TTK of titanfall, instead giving each gun strenghts and weaknesses making none a jack of all trades. Making any one gun more equally effective when wielded with skill and situational awareness, and fun, always. Changes are extensive, and the mod can be used server side only. Though there are some small "glitches", none of it is game-breaking, or even very noticable. Feedback is extremely welcome, as I can't possible ever test my changes in truly all possible situations, nor be equally skilled with every gun.
 
@@ -7,7 +6,7 @@ If you'd like to avoid the client-side glitches, simply install the mod client-s
 
 The server side only issues are caused by client/server conflicts with guns that have modified clip size (client can try to reload even when server considers gun full).
 
-If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/wFuwnuQNt7
+If you'd like to contribute your complaints, suggestions or praises you can join my discord at https://discord.gg/HpjEjKgCZY
 
 ### !changes command
 
@@ -29,15 +28,12 @@ These peeps have contributed a ton to the rebalance by play testing, discussing,
 
 ### Changelog
 
-## 1.3.1
+#### 1.3.2
 
-- Bugfix
-
-## 1.3.0
-
-- Updated for FSU2!
-- Now also works without FSU, without the !changes command
-- No rebalance changes
+- General attempt at making the rebalance less annoying to play
+    - G2 changes
+    - Spitfire changes
+    - Wingman changes
 
 previous versions at the bottom
 
@@ -127,16 +123,15 @@ previous versions at the bottom
 
     Hemlok
     - Clip size reduced 24 > 18 / 30 > 24
-    - Damage increased 4 hit > 3 hit / 33 > 35 / 25 > 30 / 20 > 20 (buff)
+    - Damage increased 3 hit > 3 hit / 33 > 33 / 25 > 30 / 20 > 20 (buff)
+    - Headshot multiplier increased 1.5 > 2.1
     - Spread decay increased 4 > 5 (buff)
     - Recoil in ADS introduced
 
     G2
     - Damage reduced 40 > 40 / 35 > 30
-    - Hipfire accuracy increased by ≈20% (buff)
-    - Fire rate increase 5.5 > 6.1 (buff)
-    - Spread kick increased by ≈100%
-    - Recoil introduced
+    - Falloff changed 1500 > 1800 / 2000 > 2300 (buff)
+    - Spread decay increased 4 > 5 (buff)
 
     Flatline
     - Damage changes 30 > 30 / 20 > 20 / 15 > 12
@@ -152,9 +147,9 @@ previous versions at the bottom
 
     C.A.R
     - Clip size reduced 30 > 24 / 36 > 28
-    - Damage reduced 4 hit > 6 hit / 25 > 18 / 13 > 12 / 10 > 8
+    - Damage reduced 4 hit > 6 hit / 25 > 17 / 13 > 12 / 10 > 8
     - Reload time increased by 20%
-    - Headshot multiplier increased 1.5 > 2.2 (buff)
+    - Headshot multiplier increased 1.5 > 1.9 (buff)
 
     Alternator
     - Clip size reduced 20 > 18 / 25 > 22
@@ -178,8 +173,6 @@ previous versions at the bottom
     - Damage reduced 3 hit > 4 hit / 35 > 30 / 25 > 20 / 20 > 12
     - Damage falloff moved up 1800 > 1500 / 2000 > 1800
     - ADS inaccuracy introduced
-    - Spread increased by ≈10%
-    - ADS recoil increased by ≈40%
 
     L-STAR
     - Overheats a bit more easily
@@ -242,7 +235,7 @@ previous versions at the bottom
 
     Wingman Elite
     - Fire rate increased 2.6 > 3.5 (buff)
-    - Recoil increased by ≈160%
+    - Rapid hipfire incurrs a small amount of spread
 
     Mozambique
     - Fire rate decreased 3.0 > 2.8
@@ -272,6 +265,16 @@ previous versions at the bottom
     - Unchanged
 
 ### Previous versions
+
+#### 1.3.1
+
+- Bugfix
+
+#### 1.3.0
+
+- Updated for FSU2!
+- Now also works without FSU, without the !changes command
+- No rebalance changes
 
 #### 1.2.4
 

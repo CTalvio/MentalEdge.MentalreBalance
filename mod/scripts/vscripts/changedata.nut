@@ -1,4 +1,4 @@
-global const REBALANCE_VERSION = "1.2.4"
+global const REBALANCE_VERSION = "1.3.2"
 // Data structure: "category","id","name","summary","details"
 global array <array <string> > changeData = [
 
@@ -41,9 +41,7 @@ global array <array <string> > changeData = [
         "ar", "weapon_g2","G2", "The G2 can now be fired faster at the cost accuracy. Fire calmly to hit where you aim.",
         "- Damage reduced 40 > 40 / 35 > 30" + "\n" +
         "- Hipfire accuracy increased by ≈20% (buff)" + "\n" +
-        "- Fire rate increase 5.5 > 6.1 (buff)" + "\n" +
-        "- Spread kick increased by ≈100%" + "\n" +
-        "- Recoil introduced"
+        "- Spread decay increased 4 > 5 (buff)"
     ],[
         "ar", "weapon_vinson","Flatline", "Flatline magazine capacity is reduced, hipfire accuracy and recoil are marginally worse.",
         "- Damage changes 30 > 30 / 20 > 20 / 15 > 12" + "\n" +
@@ -58,9 +56,9 @@ global array <array <string> > changeData = [
         "smg","weapon_car","CAR","SMG range is lower. CAR damage is reduced, headshot multiplier increased. Reload is slower.",
         "- Damage falloff increased 1000 > 750 / 1500 > 1200" + "\n" +
         "- Clip size reduced 30 > 24 / 36 > 28" + "\n" +
-        "- Damage reduced 4 hit > 6 hit / 25 > 18 / 13 > 12 / 10 > 8" + "\n" +
+        "- Damage reduced 4 hit > 6 hit / 25 > 17 / 13 > 12 / 10 > 8" + "\n" +
         "- Reload time increased by 20%" + "\n" +
-        "- Headshot multiplier increased 1.5 > 2.2 (buff)"
+        "- Headshot multiplier increased 1.5 > 1.9 (buff)"
     ],[
         "smg","weapon_alternator","Alternator","SMG range is lower. Alternator has smaller mags and less damage. ADS is buffed, but recoil is higher.",
         "- Damage falloff increased 1000 > 750 / 1500 > 1200" + "\n" +
@@ -88,9 +86,7 @@ global array <array <string> > changeData = [
         "lmg","weapon_lmg","Spitfire","Spitfire recoil and spread is greatly increased, damage and range is slightly reduced.",
         "- Damage reduced 3 hit > 4 hit / 35 > 30 / 25 > 20 / 20 > 12" + "\n" +
         "- Damage falloff moved up 1800 > 1500 / 2000 > 1800" + "\n" +
-        "- ADS inaccuracy introduced" + "\n" +
-        "- Spread increased by ≈10%" + "\n" +
-        "- ADS recoil increased by ≈40%"
+        "- ADS inaccuracy introduced"
     ],[
         "lmg","weapon_lstar","L-STAR","The L-STAR now overheats more easily, but also cools faster.",
         "- Overheats a bit more easily" + "\n" +
@@ -159,7 +155,7 @@ global array <array <string> > changeData = [
         "pistol","weapon_wingman_n","Wingman Elite","The Wingman Elite can now fire significantly faster, at the cost of greater recoil.",
         "- Silencer damage penalty removed" + "\n" +
         "- Fire rate increased 2.6 > 3.5 (buff)" + "\n" +
-        "- Recoil increased by ≈160%"
+        "- Rapid hipfire incurrs a small amount of spread"
     ],[
         "pistol","weapon_shotgun_pistol","Mozambique","The Mozambique can now one-shot at close range without a headshot. It also reloads faster.",
         "- Silencer damage penalty removed" + "\n" +
