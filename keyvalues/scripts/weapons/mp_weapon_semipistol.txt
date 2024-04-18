@@ -14,7 +14,7 @@ WeaponData
 		"aimassist_adspull_weaponclass"					"precise"
 
 		// Damage - When Used by Players
-		"damage_near_value"   							"30"
+		"damage_near_value"   							"24"
 		"damage_far_value"								"20"
 		"damage_near_value_titanarmor"					"100"
 		"damage_far_value_titanarmor" 					"70"
@@ -24,7 +24,7 @@ WeaponData
    	 	"damage_very_far_value"							"15"
    		"damage_very_far_distance"						"2000"
 
-		"damage_headshot_scale"							"2"
+		"damage_headshot_scale"							"1.5"
 
 		"red_crosshair_range" 							"750"
 	}

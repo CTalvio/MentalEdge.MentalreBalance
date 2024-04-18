@@ -16,7 +16,7 @@ WeaponData
 
 		"aimassist_adspull_weaponclass"					"broad"
 
-		"damage_near_value"   							"22"
+		"damage_near_value"   							"21"
 		"damage_far_value"								"14"
 		"damage_near_value_titanarmor"					"90"
 		"damage_far_value_titanarmor" 					"60"

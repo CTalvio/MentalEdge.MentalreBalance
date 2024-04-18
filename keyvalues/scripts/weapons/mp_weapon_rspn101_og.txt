@@ -12,7 +12,7 @@ WeaponData
 
 		"damage_flags"									"DF_BULLET | DF_INSTANT | DF_DISMEMBERMENT"
 
-		"damage_near_value"   							"25"//33
+		"damage_near_value"   							"20"//33
 		"damage_far_value"								"18"//15
 
 		"damage_near_value_titanarmor"					"70"
@@ -82,18 +82,18 @@ WeaponData
 	"spread_crouch_ads"   							"0"
 	"spread_air_ads"  								"0"
 
-	"spread_kick_on_fire_stand_hip"   				"0.55"
-	"spread_kick_on_fire_crouch_hip"  				"0.55"
-	"spread_kick_on_fire_air_hip" 					"0.55"
+	"spread_kick_on_fire_stand_hip"   				"0.40"
+	"spread_kick_on_fire_crouch_hip"  				"0.40"
+	"spread_kick_on_fire_air_hip" 					"0.40"
 
 
 	"spread_kick_on_fire_stand_ads"   				"0"
 	"spread_kick_on_fire_crouch_ads"  				"0"
 	"spread_kick_on_fire_air_ads" 					"0"
 
-	"spread_max_kick_stand_hip"   					"8.0"
+	"spread_max_kick_stand_hip"   					"5.0"
 	"spread_max_kick_crouch_hip"  					"5.0"
-	"spread_max_kick_air_hip" 						"8.0"
+	"spread_max_kick_air_hip" 						"5.0"
 
 	"spread_max_kick_stand_ads"   					"0"
 	"spread_max_kick_crouch_ads"  					"0"

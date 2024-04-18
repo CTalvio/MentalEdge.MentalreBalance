@@ -1,4 +1,4 @@
-global const REBALANCE_VERSION = "1.3.2"
+global const REBALANCE_VERSION = "1.3.3"
 // Data structure: "category","id","name","summary","details"
 global array <array <string> > changeData = [
 
@@ -15,21 +15,21 @@ global array <array <string> > changeData = [
     ],[
         "sidearm", "semipistol", "p2016", "The p2016 has a slightly increased rate of fire.",
         "- Silencer damage penalty removed" + "\n" +
-        "- Fire rate increased 8 > 9 (buff)"
+        "- Fire rate increased 8 > 9 (buff)" + "\n" +
+        "- Damage reduced 4 hit > 5 hit / 30 > 24 / 20 > 20 / 15 > 15" + "\n" +
+        "- Headshto mutliplier reduced 2 > 1.5"
     ],[
         "sidearm", "autopistol", "R45", "The effective range and damage of the R45 is somewhat reduced."
         "- Silencer damage penalty removed" + "\n" +
-        "- Damage reduced 20 > 18 / 13 > 10" + "\n" +
+        "- Damage reduced 20 > 16 / 13 > 10" + "\n" +
         "- Damage falloff increased 750 > 500 / 1000 > 660"
     ],
 
     // Assault rifles
     [
         "ar", "weapon_rspn101","R101/R102", "The R101/R102 has changed damage falloff, hipfire and ADS recoil is reduced, spread decay is improved.",
-        "- Damage changed 25 > 25 / 17 > 18" + "\n" +
+        "- Damage changed 25 > 20 / 17 > 18" + "\n" +
         "- Falloff changed 1500 > 750 / 2000 > 1800" + "\n" +
-        "- Hipfire accuracy reduced by ≈10%" + "\n" +
-        "- ADS recoil increased by ≈20%" + "\n" +
         "- Spread decay 5 > 7 (buff)"
     ],[
         "ar", "weapon_hemlok","Hemlok", "The Hemlok can kill in one burst, however ADS recoil is increased and the mag is smaller.",
@@ -44,7 +44,7 @@ global array <array <string> > changeData = [
         "- Spread decay increased 4 > 5 (buff)"
     ],[
         "ar", "weapon_vinson","Flatline", "Flatline magazine capacity is reduced, hipfire accuracy and recoil are marginally worse.",
-        "- Damage changes 30 > 30 / 20 > 20 / 15 > 12" + "\n" +
+        "- Damage changes 30 > 22 / 20 > 20 / 15 > 12" + "\n" +
         "- Clip size reduced 30 > 26 / 36 > 32" + "\n" +
         "- Hipfire accuracy reduced" + "\n" +
         "- ADS recoil given a small vertical component"
@@ -56,26 +56,26 @@ global array <array <string> > changeData = [
         "smg","weapon_car","CAR","SMG range is lower. CAR damage is reduced, headshot multiplier increased. Reload is slower.",
         "- Damage falloff increased 1000 > 750 / 1500 > 1200" + "\n" +
         "- Clip size reduced 30 > 24 / 36 > 28" + "\n" +
-        "- Damage reduced 4 hit > 6 hit / 25 > 17 / 13 > 12 / 10 > 8" + "\n" +
+        "- Damage reduced 4 hit > 7 hit / 25 > 17 / 13 > 10 / 10 > 8" + "\n" +
         "- Reload time increased by 20%" + "\n" +
         "- Headshot multiplier increased 1.5 > 1.9 (buff)"
     ],[
         "smg","weapon_alternator","Alternator","SMG range is lower. Alternator has smaller mags and less damage. ADS is buffed, but recoil is higher.",
         "- Damage falloff increased 1000 > 750 / 1500 > 1200" + "\n" +
         "- Clip size reduced 20 > 18 / 25 > 22" + "\n" +
-        "- Damage reduced 3 hit > 4 hit / 35 > 30 / 18 > 16 / 14 > 12" + "\n" +
+        "- Damage reduced 3 hit > 4 hit / 35 > 26 / 18 > 16 / 14 > 12" + "\n" +
         "- Overrall recoil increased by ≈10%" + "\n" +
         "- ADS recoil reduced to closer match hipfire (buff)"
     ],[
         "smg","weapon_hemlok_smg","Volt","SMG range is lower. Volt magazine capacity and damage is lower, but recoil is improved.",
         "- Damage falloffincreased 1000 > 750 / 1500 > 1200" + "\n" +
         "- Clip size reduced 33 > 30 / 40 > 36" + "\n" +
-        "- Damage reduced 4 hit > 5 hit / 25 > 22 / 15 > 14 / 12 > 10" + "\n" +
+        "- Damage reduced 4 hit > 5 hit / 25 > 21 / 15 > 14 / 12 > 10" + "\n" +
         "- Recoil reduced by ≈8% (buff)"
     ],[
         "smg","weapon_r97","R97","SMG range is lower. R-97 damage has been reduced, recoil is more severe and reload is slower.",
         "- Damage falloff to all increased 1000 > 750 / 1500 > 1200" + "\n" +
-        "- Damage reduced 4 hit > 5 hit / 20 > 17 / 12 > 10 / 10 > 9" + "\n" +
+        "- Damage reduced 4 hit > 7 hit / 20 > 15 / 12 > 10 / 10 > 8" + "\n" +
         "- Recoil increased by ≈15%" + "\n" +
         "- Reload time increased by 10%"
     ],
@@ -90,7 +90,8 @@ global array <array <string> > changeData = [
     ],[
         "lmg","weapon_lstar","L-STAR","The L-STAR now overheats more easily, but also cools faster.",
         "- Overheats a bit more easily" + "\n" +
-        "- Cooling speed increased (buff)"
+        "- Cooling speed increased (buff)" + "\n" +
+        "- Damage falloff moved up 1000 > 800 / 2000 > 1300"
     ],[
         "lmg","weapon_esaw","Devotion","The Devotion has a shorter spin up, but now suffers from severe damage falloff at range.",
         "- Damage changed 25 > 30 / 20 > 16 / 15 > 8" + "\n" +
@@ -141,7 +142,7 @@ global array <array <string> > changeData = [
         "- Rate of fire reduced 2.0 > 1.7" + "\n" +
         "- Clip size reduced 6 > 5 / 8 > 7" + "\n" +
         "- Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)" + "\n" +
-        "- Damage falloff inverted 4500 > 900 / 15000 > 1100" + "\n" +
+        "- Damage falloff inverted 4500 > 1000 / 15000 > 1200" + "\n" +
         "- Hipfire accuracy slightly increased by ≈25% (buff)" + "\n" +
         "- Reload time increased by 15%"
     ],[
@@ -210,7 +211,8 @@ global array <array <string> > changeData = [
         "- No changes"
     ],[
         "ordnance","weapon_satchel","Satchel","Satchel has a somewhat larger killradius.",
-        "- Larger splash radius 120 > 200 / 250 > 250 (buff)"
+        "- Larger splash radius 120 > 200 / 250 > 250 (buff)" + "\n" +
+        "- Titan damage decreased 2200 > 1250"
     ],
 
 
@@ -233,7 +235,6 @@ global array <array <string> > changeData = [
         "- Decoy health increased 50 > 65 (buff)" + "\n" +
         "- Cooldown increased, 20 seconds per charge" + "\n" +
         "- Second charge cannot be used before cloak expires"
-
     ],[
         "tactical","ability_heal","Stim","Stim heals 25 health instantly, but the regen provided during it is slower.",
         "- Heals 25hp on activation (buff)" + "\n" +

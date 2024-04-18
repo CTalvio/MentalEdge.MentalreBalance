@@ -28,12 +28,16 @@ These peeps have contributed a ton to the rebalance by play testing, discussing,
 
 ### Changelog
 
-#### 1.3.2
+#### 1.3.3
 
-- General attempt at making the rebalance less annoying to play
-    - G2 changes
-    - Spitfire changes
-    - Wingman changes
+- SMG changes
+    - Slightly more nerfed across the board
+- R101/102 changes
+- Flatline changes
+- P2016 changes
+- R45 changes
+- Gravity star changes
+- Doubletake changes
 
 previous versions at the bottom
 
@@ -84,7 +88,7 @@ previous versions at the bottom
     - Splash radius changed 75 > 150 / 350 > 350
 
     Gravity Star
-    - Unchanged
+    - Pull time reduced 2s > 1.33s
 
     Fire Star
     - Unchanged
@@ -95,6 +99,7 @@ previous versions at the bottom
 
     Satchel
     - Larger splash radius 120 > 200 / 250 > 250 (buff)
+    - Titan damage decreased 2200 > 1250
 
 ### Sidearms
 
@@ -103,9 +108,11 @@ previous versions at the bottom
 
     P2016
     - Fire rate increased 8 > 9 (buff)
+    - Damage reduced 4 hit > 5 hit / 30 > 24 / 20 > 20 / 15 > 15
+    - Headshto mutliplier reduced 2 > 1.5
 
     R45
-    - Damage reduced 20 > 18 / 13 > 10
+    - Damage reduced 20 > 16 / 13 > 10
     - Damage falloff increased 750 > 500 / 1000 > 660
 
     Wingman B3
@@ -115,18 +122,16 @@ previous versions at the bottom
 ### Assault Rifles
 
     R101/R102
-    - Damage changed 25 > 25 / 17 > 18
+    - Damage changed 25 > 20 / 17 > 18
     - Falloff changed 1500 > 750 / 2000 > 1800
-    - Hipfire accuracy reduced by ≈10%
-    - ADS recoil increased by ≈20%
     - Inaccuracy fade increased 5 > 7 (buff)
 
     Hemlok
     - Clip size reduced 24 > 18 / 30 > 24
-    - Damage increased 3 hit > 3 hit / 33 > 33 / 25 > 30 / 20 > 20 (buff)
-    - Headshot multiplier increased 1.5 > 2.1
+    - Damage increased 3 hit > 3 hit / 33 > 30 / 15 > 25 (buff)
+    - Burst delay reduced 0.25s > 0.18s (buff)
+    - Headshot multiplier increased 1.5 > 2.5 (buff)
     - Spread decay increased 4 > 5 (buff)
-    - Recoil in ADS introduced
 
     G2
     - Damage reduced 40 > 40 / 35 > 30
@@ -134,7 +139,7 @@ previous versions at the bottom
     - Spread decay increased 4 > 5 (buff)
 
     Flatline
-    - Damage changes 30 > 30 / 20 > 20 / 15 > 12
+    - Damage changes 30 > 22 / 20 > 20 / 15 > 12
     - Clip size reduced 30 > 26 / 36 > 32
     - Hipfire accuracy reduced
     - ADS recoil given a small vertical component
@@ -147,23 +152,23 @@ previous versions at the bottom
 
     C.A.R
     - Clip size reduced 30 > 24 / 36 > 28
-    - Damage reduced 4 hit > 6 hit / 25 > 17 / 13 > 12 / 10 > 8
+    - Damage reduced 4 hit > 6 hit / 25 > 17 / 13 > 10 / 10 > 8
     - Reload time increased by 20%
     - Headshot multiplier increased 1.5 > 1.9 (buff)
 
     Alternator
     - Clip size reduced 20 > 18 / 25 > 22
-    - Damage reduced 3 hit > 4 hit / 35 > 30 / 18 > 16 / 14 > 12
+    - Damage reduced 3 hit > 4 hit / 35 > 26 / 18 > 16 / 14 > 12
     - Overrall recoil increased by ≈10%
     - ADS recoil reduced to closer match hipfire (buff)
 
     Volt
     - Clip size reduced 33 > 30 / 40 > 36
-    - Damage reduced 4 hit > 5 hit / 25 > 22 / 15 > 14 / 12 > 10
+    - Damage reduced 4 hit > 5 hit / 25 > 21 / 15 > 14 / 12 > 10
     - Recoil reduced by ≈8% (buff)
 
     R-97
-    - Damage reduced 4 hit > 5 hit / 20 > 17 / 12 > 10 / 10 > 9
+    - Damage reduced 4 hit > 7 hit / 20 > 15 / 12 > 10 / 10 > 8
     - Recoil increased by ≈15%
     - Reload time increased by 10%
 
@@ -177,6 +182,7 @@ previous versions at the bottom
     L-STAR
     - Overheats a bit more easily
     - Cooling speed increased (buff)
+    - Falloff changed 1000 > 800 / 2000 > 1300
 
     Devotion
     - Damage changed 25 > 30 / 20 > 16 / 15 > 8
@@ -221,7 +227,7 @@ previous versions at the bottom
     - Rate of fire reduced 2.0 > 1.7
     - Clip size reduced 6 > 5 / 8 > 7
     - Damage increased 4 hit > 3 hit / 30 > 30 / 30 > 40 (buff)
-    - Damage falloff inverted 4500 > 900 / 15000 > 1100
+    - Damage falloff inverted 4500 > 1000 / 15000 > 1200
     - Hipfire accuracy slightly increased by ≈25% (buff)
     - Reload time increased by 15%
 
@@ -266,6 +272,16 @@ previous versions at the bottom
 
 ### Previous versions
 
+#### 1.3.2
+
+- General attempt at making the rebalance less annoying to play
+    - G2 changes
+    - Spitfire changes
+    - Wingman changes
+    - Hemlok changes
+    - Satchel changes
+    - L-Star changes
+
 #### 1.3.1
 
 - Bugfix
@@ -296,7 +312,7 @@ previous versions at the bottom
 - Mozambique changes
 - R101/102 changes
 - Hemlok changes
-- FSU is now "required" to use the new !changes command to access the changelof database in-game
+- FSU is now "required" to use the new !changes command to access the changelog database in-game
 - If you do not wish to use FSU, swap out guntips.nut for guntipsold.nut
 
 #### 1.2.1

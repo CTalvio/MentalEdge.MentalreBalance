@@ -34,58 +34,6 @@ WeaponData
 	"spread_wallrunning"  							"3"
 	"spread_wallhanging"  							"3"
 
-	"viewkick_pitch_base" 							"0.25"
-	"viewkick_pitch_random"   						"0.10"
-	"viewkick_pitch_softScale"						"1.0"
-	"viewkick_pitch_hardScale"						"0.1"
-
-	"viewkick_yaw_base"   							"0.0"
-	"viewkick_yaw_random" 							"0.6"
-	"viewkick_yaw_random_innerexclude"				"0.1"
-	"viewkick_yaw_softScale"  						"0.1"
-	"viewkick_yaw_hardScale"  						"1.0"
-
-	"viewkick_roll_base"  							"0"
-	"viewkick_roll_randomMin" 						"0.06"
-	"viewkick_roll_randomMax" 						"0.08"
-	"viewkick_roll_softScale" 						"0.2"
-	"viewkick_roll_hardScale" 						"5.0"
-
-	"viewkick_hipfire_weaponFraction" 				"0.8"
-	"viewkick_hipfire_weaponFraction_vmScale" 		"2.0"
-	"viewkick_ads_weaponFraction" 					"0.4"
-	"viewkick_ads_weaponFraction_vmScale" 			"3.0"
-
-	//"viewkick_scale_firstshot_hipfire"			"0"
-	//"viewkick_scale_firstshot_ads"				"0"
-
-	"viewkick_scale_min_hipfire"  					"1"
-	"viewkick_scale_max_hipfire"  					"1"
-	"viewkick_scale_min_ads"  						"0.75"
-	"viewkick_scale_max_ads"  						"0.75"
-	"viewkick_scale_valuePerShot" 					"0"
-	"viewkick_scale_valueLerpStart"   				"0"
-	"viewkick_scale_valueLerpEnd" 					"0"
-	"viewkick_scale_valueDecayDelay"  				"0"
-	"viewkick_scale_valueDecayRate"   				"40"
-
-	"viewkick_perm_pitch_base" 						"0"
-	"viewkick_perm_pitch_random"   					"0.2"
-	"viewkick_perm_yaw_base"   						"0"
-	"viewkick_perm_yaw_random" 						"0.15"
-
-	"viewkick_duck_scale"							"1.0"
-
-	"cooldown_viewkick_pitch_base"					"5.0"
-	"cooldown_viewkick_pitch_random"				"0.5"
-	"cooldown_viewkick_pitch_random_innerexclude"	"0.0"
-	"cooldown_viewkick_yaw_base"					"0.0"
-	"cooldown_viewkick_yaw_random"					"2.0"
-	"cooldown_viewkick_yaw_random_innerexclude"		"0.0"
-	"cooldown_viewkick_softScale"					"0.2"
-	"cooldown_viewkick_hardScale"					"0.2"
-	"cooldown_viewkick_adsScale"					"1.35"
-
 	"critical_hit_damage_scale"						"1"
 
 	// Ammo
@@ -113,8 +61,8 @@ WeaponData
 		"damage_far_value_titanarmor" 					"65"
 		"damage_rodeo" 									"100"
 		"explosion_damage"								"30"
-		"damage_near_distance"							"1000"
-		"damage_far_distance" 							"2000"
+		"damage_near_distance"							"800"
+		"damage_far_distance" 							"1300"
 
 		"damage_headshot_scale"							"1.5"
 

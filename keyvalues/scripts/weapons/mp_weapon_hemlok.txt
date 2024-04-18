@@ -12,18 +12,18 @@ WeaponData
 		"aimassist_adspull_weaponclass"					"precise"
 
 		// Damage - When Used by Players
-		"damage_near_value"   							"33"
-		"damage_far_value"								"30"
+		"damage_near_value"   							"30"
+		"damage_far_value"								"25"
 		"damage_near_value_titanarmor"					"75"
 		"damage_far_value_titanarmor" 					"45"
 		"damage_rodeo" 									"170"
-		"damage_near_distance"							"1500"
-		"damage_far_distance" 							"2000"
+		"damage_near_distance"							"1250"
+		"damage_far_distance" 							"1400"
 
-   	 	"damage_very_far_value"							"20"
-   		"damage_very_far_distance"						"3500"
+   	 	"damage_very_far_value"							"<KEEP_DEFAULT>"
+   		"damage_very_far_distance"						"<KEEP_DEFAULT>"
 
-		"damage_headshot_scale"							"2.1"
+		"damage_headshot_scale"							"2.5"
 
 		"red_crosshair_range" 							"1500"
 
@@ -32,7 +32,7 @@ WeaponData
 	// Behavior
 	"fire_rate"   									"15.5"
 	"burst_fire_count"								"3"
-	"burst_fire_delay"								"0.20"
+	"burst_fire_delay"								"0.18"
 	"zoom_time_in"									"0.25"
 	"zoom_time_out"   								"0.2"
 	"zoom_fov"										"35"
@@ -69,21 +69,21 @@ WeaponData
 	"spread_crouch_hip"   							"4.5"
 	"spread_air_hip"  								"11.0"
 
-	"spread_stand_ads"								"0.3"
-	"spread_crouch_ads"   							"0.1"
-	"spread_air_ads"  								"0.7"
+	"spread_stand_ads"								"0.0"
+	"spread_crouch_ads"   							"0.0"
+	"spread_air_ads"  								"0.0"
 
-	"spread_kick_on_fire_stand_hip"   				"0.6"
-	"spread_kick_on_fire_crouch_hip"  				"0.5"
-	"spread_kick_on_fire_air_hip" 					"0.6"
+	"spread_kick_on_fire_stand_hip"   				"0.3"
+	"spread_kick_on_fire_crouch_hip"  				"0.3"
+	"spread_kick_on_fire_air_hip" 					"0.3"
 
-	"spread_kick_on_fire_stand_ads"   				"0.2"
-	"spread_kick_on_fire_crouch_ads"  				"0.2"
-	"spread_kick_on_fire_air_ads" 					"0.2"
+	"spread_kick_on_fire_stand_ads"   				"0"
+	"spread_kick_on_fire_crouch_ads"  				"0"
+	"spread_kick_on_fire_air_ads" 					"0"
 
-	"spread_max_kick_stand_hip"   					"8.0"
-	"spread_max_kick_crouch_hip"  					"5.0"
-	"spread_max_kick_air_hip" 						"8.0"
+	"spread_max_kick_stand_hip"   					"4.0"
+	"spread_max_kick_crouch_hip"  					"4.0"
+	"spread_max_kick_air_hip" 						"4.0"
 
 	"spread_max_kick_stand_ads"   					"0"
 	"spread_max_kick_crouch_ads"  					"0"
@@ -94,45 +94,6 @@ WeaponData
 
 	"ammo_suck_behavior"							"primary_weapons"
 
-	// View Kick
-	"viewkick_spring" 								"hemlok"
-
-	"viewkick_pitch_base" 							"-1.6"
-	"viewkick_pitch_random"   						"0.3"
-	"viewkick_pitch_softScale"						"0.65"
-	"viewkick_pitch_hardScale"						"1.0"
-
-	"viewkick_yaw_base"   							"0.15"
-	"viewkick_yaw_random" 							"0.2"
-	"viewkick_yaw_softScale"  						"0.75"
-	"viewkick_yaw_hardScale"  						"0.5"
-
-	"viewkick_roll_base"  							"0.5"
-	"viewkick_roll_randomMin" 						"0.2"
-	"viewkick_roll_randomMax" 						"0.25"
-	"viewkick_roll_softScale" 						"0.2"
-	"viewkick_roll_hardScale" 						"1.95"
-
-	"viewkick_hipfire_weaponFraction" 				"0.65"
-	"viewkick_hipfire_weaponFraction_vmScale" 		"1.0"
-	"viewkick_ads_weaponFraction" 					"0.1"
-	"viewkick_ads_weaponFraction_vmScale" 			"0.5"
-
-	"viewkick_scale_firstshot_hipfire"				"1.2"
-	"viewkick_scale_min_hipfire"  					"0.1"
-	"viewkick_scale_max_hipfire"  					"0.6"
-	"viewkick_scale_min_ads"  						"0.5"
-	"viewkick_scale_max_ads"  						"1.7"
-	"viewkick_scale_valuePerShot" 					"0.65"
-	"viewkick_scale_valueLerpStart"   				"0"
-	"viewkick_scale_valueLerpEnd" 					"6"
-	"viewkick_scale_valueDecayDelay"  				"0.22"
-	"viewkick_scale_valueDecayRate"   				"30"
-
-	"viewkick_perm_pitch_base"						"-0.35"
-	"viewkick_perm_pitch_random"  				 	"0.1"
-	"viewkick_perm_yaw_base"						"0.0"
-	"viewkick_perm_yaw_random"						"0.4"
 
 	Mods
 	{

@@ -80,7 +80,7 @@ void function GunTipsThread(entity player, int waitTime){
 void function provideLoadout(entity player){
     array <int> itemIndex = []
 
-    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() || player.GetMainWeapons().len() != 3 || player.GetOffhandWeapons().len() != 3 ) {
+    if ( !IsValid(player) || !IsAlive(player) || player.IsTitan() || player.GetMainWeapons().len() != 3 || !(player.GetOffhandWeapons().len()==4 || player.GetOffhandWeapons().len()==3) ){
     #if FSCC_ENABLED
         FSU_PrivateChatMessage( player, "%EUnable to get your loadout! %TAre you dead or in a titan?")
     #endif
